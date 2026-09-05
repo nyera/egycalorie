@@ -11,11 +11,19 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppDiaryRouteImport } from './routes/app.diary'
+import { Route as AppGroceryRouteImport } from './routes/app.grocery'
+import { Route as AppInsightsRouteImport } from './routes/app.insights'
+import { Route as AppPlanRouteImport } from './routes/app.plan'
+import { Route as AppProgressRouteImport } from './routes/app.progress'
+import { Route as AppRecipesRouteImport } from './routes/app.recipes'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -25,6 +33,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -52,15 +65,58 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDiaryRoute = AppDiaryRouteImport.update({
+  id: '/diary',
+  path: '/diary',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppGroceryRoute = AppGroceryRouteImport.update({
+  id: '/grocery',
+  path: '/grocery',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppInsightsRoute = AppInsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPlanRoute = AppPlanRouteImport.update({
+  id: '/plan',
+  path: '/plan',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProgressRoute = AppProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecipesRoute = AppRecipesRouteImport.update({
+  id: '/recipes',
+  path: '/recipes',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/app': typeof AppRouteWithChildren
   '/contact': typeof ContactRoute
   '/features': typeof FeaturesRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/signup': typeof SignupRoute
+  '/app/diary': typeof AppDiaryRoute
+  '/app/grocery': typeof AppGroceryRoute
+  '/app/insights': typeof AppInsightsRoute
+  '/app/plan': typeof AppPlanRoute
+  '/app/progress': typeof AppProgressRoute
+  '/app/recipes': typeof AppRecipesRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,27 +126,50 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/signup': typeof SignupRoute
+  '/app/diary': typeof AppDiaryRoute
+  '/app/grocery': typeof AppGroceryRoute
+  '/app/insights': typeof AppInsightsRoute
+  '/app/plan': typeof AppPlanRoute
+  '/app/progress': typeof AppProgressRoute
+  '/app/recipes': typeof AppRecipesRoute
+  '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/app': typeof AppRouteWithChildren
   '/contact': typeof ContactRoute
   '/features': typeof FeaturesRoute
   '/login': typeof LoginRoute
   '/pricing': typeof PricingRoute
   '/signup': typeof SignupRoute
+  '/app/diary': typeof AppDiaryRoute
+  '/app/grocery': typeof AppGroceryRoute
+  '/app/insights': typeof AppInsightsRoute
+  '/app/plan': typeof AppPlanRoute
+  '/app/progress': typeof AppProgressRoute
+  '/app/recipes': typeof AppRecipesRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/app'
     | '/contact'
     | '/features'
     | '/login'
     | '/pricing'
     | '/signup'
+    | '/app/diary'
+    | '/app/grocery'
+    | '/app/insights'
+    | '/app/plan'
+    | '/app/progress'
+    | '/app/recipes'
+    | '/app/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,20 +179,36 @@ export interface FileRouteTypes {
     | '/login'
     | '/pricing'
     | '/signup'
+    | '/app/diary'
+    | '/app/grocery'
+    | '/app/insights'
+    | '/app/plan'
+    | '/app/progress'
+    | '/app/recipes'
+    | '/app'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/app'
     | '/contact'
     | '/features'
     | '/login'
     | '/pricing'
     | '/signup'
+    | '/app/diary'
+    | '/app/grocery'
+    | '/app/insights'
+    | '/app/plan'
+    | '/app/progress'
+    | '/app/recipes'
+    | '/app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AppRoute: typeof AppRouteWithChildren
   ContactRoute: typeof ContactRoute
   FeaturesRoute: typeof FeaturesRoute
   LoginRoute: typeof LoginRoute
@@ -135,6 +230,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -172,12 +274,84 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/diary': {
+      id: '/app/diary'
+      path: '/diary'
+      fullPath: '/app/diary'
+      preLoaderRoute: typeof AppDiaryRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/grocery': {
+      id: '/app/grocery'
+      path: '/grocery'
+      fullPath: '/app/grocery'
+      preLoaderRoute: typeof AppGroceryRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/insights': {
+      id: '/app/insights'
+      path: '/insights'
+      fullPath: '/app/insights'
+      preLoaderRoute: typeof AppInsightsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/plan': {
+      id: '/app/plan'
+      path: '/plan'
+      fullPath: '/app/plan'
+      preLoaderRoute: typeof AppPlanRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/progress': {
+      id: '/app/progress'
+      path: '/progress'
+      fullPath: '/app/progress'
+      preLoaderRoute: typeof AppProgressRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/recipes': {
+      id: '/app/recipes'
+      path: '/recipes'
+      fullPath: '/app/recipes'
+      preLoaderRoute: typeof AppRecipesRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
+
+interface AppRouteChildren {
+  AppDiaryRoute: typeof AppDiaryRoute
+  AppGroceryRoute: typeof AppGroceryRoute
+  AppInsightsRoute: typeof AppInsightsRoute
+  AppPlanRoute: typeof AppPlanRoute
+  AppProgressRoute: typeof AppProgressRoute
+  AppRecipesRoute: typeof AppRecipesRoute
+  AppIndexRoute: typeof AppIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppDiaryRoute: AppDiaryRoute,
+  AppGroceryRoute: AppGroceryRoute,
+  AppInsightsRoute: AppInsightsRoute,
+  AppPlanRoute: AppPlanRoute,
+  AppProgressRoute: AppProgressRoute,
+  AppRecipesRoute: AppRecipesRoute,
+  AppIndexRoute: AppIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AppRoute: AppRouteWithChildren,
   ContactRoute: ContactRoute,
   FeaturesRoute: FeaturesRoute,
   LoginRoute: LoginRoute,
