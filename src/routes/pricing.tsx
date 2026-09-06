@@ -10,17 +10,18 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Free, Plus and Family Plans | Nutrigo" },
+      { title: "Pricing — Free, Plus and Family Plans | EgyCalorie" },
       {
         name: "description",
         content:
-          "Simple Nutrigo pricing in EGP. Track calories and macros free forever, or upgrade for meal plans, insights and family accounts.",
+          "Simple EgyCalorie pricing in EGP. Track calories and macros free forever, or upgrade for meal plans, insights and family accounts.",
       },
-      { property: "og:title", content: "Pricing — Free, Plus and Family Plans | Nutrigo" },
+      { property: "og:title", content: "Pricing — Free, Plus and Family Plans | EgyCalorie" },
       {
         property: "og:description",
         content: "Free forever calorie tracking, with Plus and Family upgrades priced in EGP.",
@@ -109,12 +110,9 @@ function Pricing() {
 
       <section className="surface-glow">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8 lg:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Pricing</p>
-          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">Simple plans, priced in EGP</h1>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Start free and stay free for as long as you like. Upgrade when you want planning,
-            recipes and long-term progress tracking.
-          </p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">{t("Pricing")}</p>
+          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">{t("Simple plans, priced in EGP")}</h1>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">{t("Start free and stay free for as long as you like. Upgrade when you want planning, recipes and long-term progress tracking.")}</p>
         </div>
       </section>
 
@@ -122,7 +120,7 @@ function Pricing() {
         <div className="grid gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
-              key={plan.name}
+              key={t(plan.name)}
               className={cn(
                 "flex flex-col rounded-[1.75rem] border bg-card p-7",
                 plan.featured
@@ -131,11 +129,9 @@ function Pricing() {
               )}
             >
               <div className="flex items-center justify-between">
-                <h2 className="font-display text-xl font-extrabold">{plan.name}</h2>
+                <h2 className="font-display text-xl font-extrabold">{t(plan.name)}</h2>
                 {plan.featured && (
-                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
-                    Most popular
-                  </span>
+                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">{t("Most popular")}</span>
                 )}
               </div>
               <p className="mt-3 text-sm text-muted-foreground">{plan.blurb}</p>
@@ -168,13 +164,13 @@ function Pricing() {
 
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto max-w-3xl px-5 py-16 lg:px-8 lg:py-20">
-          <h2 className="text-center text-3xl font-extrabold sm:text-4xl">Common questions</h2>
+          <h2 className="text-center text-3xl font-extrabold sm:text-4xl">{t("Common questions")}</h2>
           <Accordion type="single" collapsible className="mt-8">
             {faqs.map((f) => (
-              <AccordionItem key={f.q} value={f.q}>
-                <AccordionTrigger className="text-left text-base font-bold">{f.q}</AccordionTrigger>
+              <AccordionItem key={t(f.q)} value={t(f.q)}>
+                <AccordionTrigger className="text-left text-base font-bold">{t(f.q)}</AccordionTrigger>
                 <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
-                  {f.a}
+                  {t(f.a)}
                 </AccordionContent>
               </AccordionItem>
             ))}

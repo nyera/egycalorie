@@ -20,6 +20,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { t } from "@/lib/i18n";
 
 export const appNav = [
   { to: "/app", label: "My Day", icon: LayoutDashboard, exact: true },
@@ -36,7 +37,9 @@ const mobileNav = appNav.slice(0, 5);
 export function AppShell() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const current = appNav.find((n) => (n.exact ? pathname === n.to : pathname.startsWith(n.to)));
+  const current = appNav.find((n) =>
+    n.exact ? pathname === n.to : pathname.startsWith(n.to),
+  );
 
   return (
     <div className="min-h-screen bg-secondary/30">
@@ -46,23 +49,19 @@ export function AppShell() {
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
             <Salad className="h-5 w-5" />
           </span>
-          <span className="font-display text-lg font-extrabold tracking-tight">Nutrigo</span>
+          <span className="font-display text-lg font-extrabold tracking-tight">{t("EgyCalorie")}</span>
         </div>
         <nav className="flex-1 space-y-1 px-4 py-4">
-          <p className="px-3 pb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
-            Daily
-          </p>
+          <p className="px-3 pb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">{t("Daily")}</p>
           {appNav.map((item) => (
             <NavItem key={item.to} item={item} />
           ))}
         </nav>
         <div className="m-4 rounded-2xl bg-primary/10 p-4">
-          <p className="text-sm font-bold">You're on Free</p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Unlock meal plans, recipes and full history.
-          </p>
+          <p className="text-sm font-bold">{t("You're on Free")}</p>
+          <p className="mt-1 text-xs text-muted-foreground">{t("Unlock meal plans, recipes and full history.")}</p>
           <Button asChild size="sm" className="mt-3 w-full rounded-full">
-            <Link to="/pricing">Upgrade to Plus</Link>
+            <Link to="/pricing">{t("Upgrade to Plus")}</Link>
           </Button>
         </div>
         <div className="border-t border-border p-4">
@@ -70,8 +69,7 @@ export function AppShell() {
             to="/"
             className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-muted-foreground hover:bg-muted hover:text-foreground"
           >
-            <LogOut className="h-4 w-4" /> Sign out
-          </Link>
+            <LogOut className="h-4 w-4" />{t("Sign out")}</Link>
         </div>
       </aside>
 
@@ -79,14 +77,14 @@ export function AppShell() {
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <button
-            aria-label="Close menu"
+            aria-label={t("Close menu")}
             className="absolute inset-0 bg-foreground/40"
             onClick={() => setOpen(false)}
           />
           <div className="absolute inset-y-0 left-0 flex w-[264px] flex-col bg-card">
             <div className="flex h-16 items-center justify-between px-5">
-              <span className="font-display text-lg font-extrabold">Nutrigo</span>
-              <button aria-label="Close menu" onClick={() => setOpen(false)}>
+              <span className="font-display text-lg font-extrabold">{t("EgyCalorie")}</span>
+              <button aria-label={t("Close menu")} onClick={() => setOpen(false)}>
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -105,7 +103,7 @@ export function AppShell() {
           <div className="flex h-16 items-center gap-3 px-4 sm:px-6">
             <button
               type="button"
-              aria-label="Open menu"
+              aria-label={t("Open menu")}
               onClick={() => setOpen(true)}
               className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border lg:hidden"
             >
@@ -118,14 +116,14 @@ export function AppShell() {
               <div className="relative hidden md:block">
                 <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
-                  placeholder="Search foods…"
+                  placeholder={t("Search foods\u2026")}
                   className="h-10 w-56 rounded-full pl-9 lg:w-64"
-                  aria-label="Search foods"
+                  aria-label={t("Search foods")}
                 />
               </div>
               <button
                 type="button"
-                aria-label="Notifications"
+                aria-label={t("Notifications")}
                 className="relative grid h-10 w-10 place-items-center rounded-full border border-border bg-card"
               >
                 <Bell className="h-4 w-4" />
@@ -133,15 +131,13 @@ export function AppShell() {
               </button>
               <button
                 type="button"
-                aria-label="Settings"
+                aria-label={t("Settings")}
                 className="hidden h-10 w-10 place-items-center rounded-full border border-border bg-card sm:grid"
               >
                 <Settings className="h-4 w-4" />
               </button>
               <Avatar className="h-10 w-10 border border-border">
-                <AvatarFallback className="bg-primary/12 text-sm font-bold text-primary">
-                  NH
-                </AvatarFallback>
+                <AvatarFallback className="bg-primary/12 text-sm font-bold text-primary">{t("NH")}</AvatarFallback>
               </Avatar>
             </div>
           </div>
@@ -184,7 +180,7 @@ function NavItem({ item }: { item: (typeof appNav)[number] }) {
       activeProps={{ className: "!bg-primary !text-primary-foreground hover:!bg-primary" }}
     >
       <item.icon className="h-4.5 w-4.5" />
-      {item.label}
+      {t(item.label)}
     </Link>
   );
 }

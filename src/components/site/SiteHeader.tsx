@@ -3,6 +3,7 @@ import { Menu, Salad, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { t } from "@/lib/i18n";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -23,7 +24,7 @@ export function SiteHeader() {
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground">
               <Salad className="h-5 w-5" />
             </span>
-            <span className="font-display text-lg font-extrabold tracking-tight">Nutrigo</span>
+            <span className="font-display text-lg font-extrabold tracking-tight">{t("EgyCalorie")}</span>
           </Link>
           <nav className="hidden items-center gap-1 md:flex">
             {nav.map((item) => (
@@ -34,7 +35,7 @@ export function SiteHeader() {
                 className="rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 activeProps={{ className: "!text-foreground bg-muted" }}
               >
-                {item.label}
+                {t(item.label)}
               </Link>
             ))}
           </nav>
@@ -42,16 +43,16 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 md:flex">
           <Button asChild variant="ghost" className="rounded-full">
-            <Link to="/login">Log in</Link>
+            <Link to="/login">{t("Log in")}</Link>
           </Button>
           <Button asChild className="rounded-full px-5">
-            <Link to="/signup">Start free</Link>
+            <Link to="/signup">{t("Start free")}</Link>
           </Button>
         </div>
 
         <button
           type="button"
-          aria-label="Toggle menu"
+          aria-label={t("Toggle menu")}
           onClick={() => setOpen((v) => !v)}
           className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border md:hidden"
         >
@@ -70,19 +71,15 @@ export function SiteHeader() {
               activeProps={{ className: "!text-foreground bg-muted" }}
               activeOptions={{ exact: item.to === "/" }}
             >
-              {item.label}
+              {t(item.label)}
             </Link>
           ))}
           <div className="mt-3 grid grid-cols-2 gap-2">
             <Button asChild variant="outline" className="rounded-full">
-              <Link to="/login" onClick={() => setOpen(false)}>
-                Log in
-              </Link>
+              <Link to="/login" onClick={() => setOpen(false)}>{t("Log in")}</Link>
             </Button>
             <Button asChild className="rounded-full">
-              <Link to="/signup" onClick={() => setOpen(false)}>
-                Start free
-              </Link>
+              <Link to="/signup" onClick={() => setOpen(false)}>{t("Start free")}</Link>
             </Button>
           </div>
         </nav>

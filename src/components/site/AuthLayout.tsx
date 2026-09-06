@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Salad } from "lucide-react";
 import type { ReactNode } from "react";
+import { t } from "@/lib/i18n";
 
 const highlights = [
   "1,400+ Egyptian foods with real portions",
@@ -26,7 +27,7 @@ export function AuthLayout({
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
             <Salad className="h-5 w-5" />
           </span>
-          <span className="font-display text-lg font-extrabold tracking-tight">Nutrigo</span>
+          <span className="font-display text-lg font-extrabold tracking-tight">{t("EgyCalorie")}</span>
         </Link>
 
         <div className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center py-10">
@@ -42,12 +43,8 @@ export function AuthLayout({
       <div className="relative hidden overflow-hidden bg-secondary/50 lg:block">
         <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_20%,hsl(var(--ring)/0.18),transparent_70%)]" />
         <div className="relative flex h-full flex-col justify-center px-14">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
-            Built for Egyptian kitchens
-          </p>
-          <h2 className="mt-4 max-w-sm font-display text-3xl font-extrabold leading-tight">
-            Track ful, koshari and molokhia — not vague substitutes.
-          </h2>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">{t("Built for Egyptian kitchens")}</p>
+          <h2 className="mt-4 max-w-sm font-display text-3xl font-extrabold leading-tight">{t("Track ful, koshari and molokhia \u2014 not vague substitutes.")}</h2>
           <ul className="mt-8 space-y-4">
             {highlights.map((h) => (
               <li key={h} className="flex items-start gap-3 text-sm">
@@ -57,13 +54,8 @@ export function AuthLayout({
             ))}
           </ul>
           <div className="mt-10 max-w-sm rounded-3xl border border-border bg-card p-6">
-            <p className="text-sm leading-relaxed">
-              “First tracker where I could log a plate of koshari in one tap. I finally stayed
-              consistent for a full three months.”
-            </p>
-            <p className="mt-4 text-xs font-semibold text-muted-foreground">
-              Mariam T. — lost 9 kg with Nutrigo
-            </p>
+            <p className="text-sm leading-relaxed">{t("\u201cFirst tracker where I could log a plate of koshari in one tap. I finally stayed consistent for a full three months.\u201d")}</p>
+            <p className="mt-4 text-xs font-semibold text-muted-foreground">{t("Mariam T. \u2014 lost 9 kg with EgyCalorie")}</p>
           </div>
         </div>
       </div>

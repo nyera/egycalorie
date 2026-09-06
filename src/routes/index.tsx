@@ -19,17 +19,18 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { consumed, consumedMacros, dailyTargets, todayMeals } from "@/lib/mock-data";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nutrigo — Track Egyptian Food, Calories & Macros" },
+      { title: "EgyCalorie — Track Egyptian Food, Calories & Macros" },
       {
         name: "description",
         content:
-          "Nutrigo makes calorie and macro tracking effortless for Egyptian and Arab food. Log ful, koshari and molokhia in seconds, plan meals and see real progress.",
+          "EgyCalorie makes calorie and macro tracking effortless for Egyptian and Arab food. Log ful, koshari and molokhia in seconds, plan meals and see real progress.",
       },
-      { property: "og:title", content: "Nutrigo — Track Egyptian Food, Calories & Macros" },
+      { property: "og:title", content: "EgyCalorie — Track Egyptian Food, Calories & Macros" },
       {
         property: "og:description",
         content:
@@ -65,11 +66,11 @@ const features = [
 const testimonials = [
   { name: "Mariam H.", role: "Cairo · lost 9 kg", text: "Finally an app that knows what koshari is. I stopped guessing and started losing weight." },
   { name: "Omar S.", role: "Alexandria · gained muscle", text: "Macro tracking with Egyptian food used to be impossible. Now logging takes me 20 seconds." },
-  { name: "Dr. Nour A.", role: "Clinical dietitian", text: "I recommend Nutrigo to patients because the portions match how families actually eat here." },
+  { name: "Dr. Nour A.", role: "Clinical dietitian", text: "I recommend EgyCalorie to patients because the portions match how families actually eat here." },
 ];
 
 const faqs = [
-  { q: "Does Nutrigo really include Egyptian food?", a: "Yes. The product is designed around local dishes and home portions — ful, taameya, koshari, molokhia, mahshi, fatta, baladi bread and more." },
+  { q: "Does EgyCalorie really include Egyptian food?", a: "Yes. The product is designed around local dishes and home portions — ful, taameya, koshari, molokhia, mahshi, fatta, baladi bread and more." },
   { q: "Do I need to weigh my food?", a: "No. You can pick natural portions like 1 loaf, 1 bowl or 1 medium plate. Weighing is optional for people who want precision." },
   { q: "Can I use it in Arabic?", a: "Food names are shown in both English and Arabic so search always works the way you think." },
   { q: "Is there a free plan?", a: "Yes, the free plan covers daily logging, calories and basic macros forever." },
@@ -87,39 +88,30 @@ function Home() {
         <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-16 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:px-8 lg:pb-24 lg:pt-20">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary">
-              <Sparkles className="h-3.5 w-3.5" />
-              Made for Egyptian & Arab meals
-            </span>
+              <Sparkles className="h-3.5 w-3.5" />{t("Made for Egyptian & Arab meals")}</span>
             <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl">
               Track your food the way{" "}
-              <span className="text-primary">you actually eat</span>
+              <span className="text-primary">{t("you actually eat")}</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Nutrigo turns calorie and macro tracking into a 20-second habit. Log ful in the
-              morning and koshari at lunch — and still know exactly where your day stands.
-            </p>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">{t("EgyCalorie turns calorie and macro tracking into a 20-second habit. Log ful in the morning and koshari at lunch \u2014 and still know exactly where your day stands.")}</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full px-7 text-base">
-                <Link to="/signup">
-                  Create free account <ArrowRight className="ml-1 h-4 w-4" />
+                <Link to="/signup">{t("Create free account")}<ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-7 text-base">
-                <Link to="/login">Log in</Link>
+                <Link to="/login">{t("Log in")}</Link>
               </Button>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-primary" /> Free forever plan
-              </span>
+                <Check className="h-4 w-4 text-primary" />{t("Free forever plan")}</span>
               <span className="inline-flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-primary" /> No credit card
-              </span>
+                <Check className="h-4 w-4 text-primary" />{t("No credit card")}</span>
               <span className="inline-flex items-center gap-1.5">
-                <Star className="h-4 w-4 fill-warning text-warning" /> 4.9 average rating
-              </span>
+                <Star className="h-4 w-4 fill-warning text-warning" />{t("4.9 average rating")}</span>
             </div>
           </div>
 
@@ -129,20 +121,20 @@ function Home() {
 
       {/* BENEFITS */}
       <Section
-        eyebrow="Why Nutrigo"
-        title="Everything you need to eat better — nothing you don't"
+        eyebrow={t("Why EgyCalorie")}
+        title={t("Everything you need to eat better \u2014 nothing you don't")}
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((b) => (
             <div
-              key={b.title}
+              key={t(b.title)}
               className="rounded-3xl border border-border bg-card p-6 transition-shadow hover:shadow-lg hover:shadow-primary/5"
             >
               <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
                 <b.icon className="h-5 w-5" />
               </span>
-              <h3 className="mt-4 text-base font-bold">{b.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.text}</p>
+              <h3 className="mt-4 text-base font-bold">{t(b.title)}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(b.text)}</p>
             </div>
           ))}
         </div>
@@ -151,13 +143,13 @@ function Home() {
       {/* HOW IT WORKS */}
       <section className="bg-card py-16 lg:py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <Heading eyebrow="How it works" title="Three steps to a day you can measure" />
+          <Heading eyebrow={t("How it works")} title={t("Three steps to a day you can measure")} />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {steps.map((s) => (
               <div key={s.n} className="rounded-3xl border border-border bg-background p-7">
                 <span className="font-display text-3xl font-extrabold text-primary/30">{s.n}</span>
-                <h3 className="mt-3 text-lg font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                <h3 className="mt-3 text-lg font-bold">{t(s.title)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(s.text)}</p>
               </div>
             ))}
           </div>
@@ -165,24 +157,23 @@ function Home() {
       </section>
 
       {/* FEATURES */}
-      <Section eyebrow="Features" title="A complete daily nutrition tool">
+      <Section eyebrow={t("Features")} title={t("A complete daily nutrition tool")}>
         <div className="grid gap-4 sm:grid-cols-2">
           {features.map((f) => (
-            <div key={f.title} className="flex gap-4 rounded-3xl border border-border bg-card p-6">
+            <div key={t(f.title)} className="flex gap-4 rounded-3xl border border-border bg-card p-6">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground">
                 <f.icon className="h-5 w-5" />
               </span>
               <div className="min-w-0">
-                <h3 className="text-base font-bold">{f.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
+                <h3 className="text-base font-bold">{t(f.title)}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t(f.text)}</p>
               </div>
             </div>
           ))}
         </div>
         <div className="mt-8">
           <Button asChild variant="outline" className="rounded-full">
-            <Link to="/features">
-              See all features <ArrowRight className="ml-1 h-4 w-4" />
+            <Link to="/features">{t("See all features")}<ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
         </div>
@@ -193,15 +184,11 @@ function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-2 lg:items-center lg:px-8">
           <div>
             <Heading
-              eyebrow="Egyptian food support"
-              title="Local dishes, real portions, honest numbers"
+              eyebrow={t("Egyptian food support")}
+              title={t("Local dishes, real portions, honest numbers")}
               align="left"
             />
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Most trackers make you rebuild every Egyptian meal from scratch. Nutrigo starts with
-              the dishes on your table — with portions like "1 loaf of baladi bread" or "1 medium
-              plate of koshari".
-            </p>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">{t("Most trackers make you rebuild every Egyptian meal from scratch. EgyCalorie starts with the dishes on your table \u2014 with portions like \"1 loaf of baladi bread\" or \"1 medium plate of koshari\".")}</p>
             <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
               {["Ful & taameya", "Koshari & pasta", "Molokhia & mahshi", "Fatta & grilled meat", "Baladi bread & rice", "Egyptian desserts"].map(
                 (i) => (
@@ -235,19 +222,21 @@ function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <Section eyebrow="Social proof" title="Loved by people who tried everything else">
+      <Section eyebrow={t("Social proof")} title={t("Loved by people who tried everything else")}>
         <div className="grid gap-4 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="rounded-3xl border border-border bg-card p-6">
+          {testimonials.map((item) => (
+            <figure key={item.name} className="rounded-3xl border border-border bg-card p-6">
               <Quote className="h-6 w-6 text-primary/40" />
-              <blockquote className="mt-3 text-sm leading-relaxed">{t.text}</blockquote>
+              <blockquote className="mt-3 text-sm leading-relaxed">{t(item.text)}</blockquote>
               <figcaption className="mt-5 flex items-center gap-3">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                  {t.name.charAt(0)}
+                  {t(item.name).charAt(0)}
                 </span>
                 <span className="min-w-0">
-                  <span className="block truncate text-sm font-bold">{t.name}</span>
-                  <span className="block truncate text-xs text-muted-foreground">{t.role}</span>
+                  <span className="block truncate text-sm font-bold">{t(item.name)}</span>
+                  <span className="block truncate text-xs text-muted-foreground">
+                    {t(item.role)}
+                  </span>
                 </span>
               </figcaption>
             </figure>
@@ -258,18 +247,18 @@ function Home() {
       {/* FAQ */}
       <section className="bg-card py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <Heading eyebrow="FAQ" title="Questions, answered" />
+          <Heading eyebrow={t("FAQ")} title={t("Questions, answered")} />
           <div className="mt-8 space-y-3">
             {faqs.map((f) => (
               <details
-                key={f.q}
+                key={t(f.q)}
                 className="group rounded-2xl border border-border bg-background p-5 [&_svg]:open:rotate-180"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold">
-                  {f.q}
+                  {t(f.q)}
                   <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform" />
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(f.a)}</p>
               </details>
             ))}
           </div>
@@ -280,19 +269,14 @@ function Home() {
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <div className="surface-glow overflow-hidden rounded-[2rem] border border-primary/20 bg-card px-6 py-14 text-center lg:px-16">
-            <h2 className="mx-auto max-w-2xl text-3xl font-extrabold sm:text-4xl">
-              Your next healthy day starts with one log
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
-              Join thousands of people tracking Egyptian food without spreadsheets, guesswork or
-              giving up their favourite meals.
-            </p>
+            <h2 className="mx-auto max-w-2xl text-3xl font-extrabold sm:text-4xl">{t("Your next healthy day starts with one log")}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">{t("Join thousands of people tracking Egyptian food without spreadsheets, guesswork or giving up their favourite meals.")}</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full px-8 text-base">
-                <Link to="/signup">Get started free</Link>
+                <Link to="/signup">{t("Get started free")}</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-8 text-base">
-                <Link to="/pricing">See pricing</Link>
+                <Link to="/pricing">{t("See pricing")}</Link>
               </Button>
             </div>
           </div>
@@ -312,8 +296,8 @@ function AppPreview({ remaining }: { remaining: number }) {
       <div className="rounded-[2rem] border border-border bg-card p-5 shadow-2xl shadow-primary/10">
         <div className="flex items-center justify-between">
           <div className="min-w-0">
-            <p className="text-xs text-muted-foreground">Today</p>
-            <p className="truncate font-display text-lg font-bold">My Day</p>
+            <p className="text-xs text-muted-foreground">{t("Today")}</p>
+            <p className="truncate font-display text-lg font-bold">{t("My Day")}</p>
           </div>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             {pct}% of budget
@@ -321,7 +305,7 @@ function AppPreview({ remaining }: { remaining: number }) {
         </div>
 
         <div className="mt-5 rounded-2xl bg-muted/60 p-5 text-center">
-          <p className="text-xs font-medium text-muted-foreground">Remaining</p>
+          <p className="text-xs font-medium text-muted-foreground">{t("Remaining")}</p>
           <p className="font-display text-4xl font-extrabold">{remaining}</p>
           <p className="text-xs text-muted-foreground">of {dailyTargets.calories} kcal</p>
           <div className="mt-4 h-2.5 overflow-hidden rounded-full bg-border">
@@ -363,7 +347,7 @@ function AppPreview({ remaining }: { remaining: number }) {
             >
               <span className="text-xl">{m.items[0]?.emoji ?? "🍽️"}</span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold">{m.label}</span>
+                <span className="block truncate text-sm font-semibold">{t(m.label)}</span>
                 <span className="block truncate text-xs text-muted-foreground">
                   {m.items.map((i) => i.name).join(", ")}
                 </span>

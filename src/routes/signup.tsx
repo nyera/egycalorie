@@ -12,17 +12,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { AuthLayout } from "@/components/site/AuthLayout";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/signup")({
   head: () => ({
     meta: [
-      { title: "Create Your Free Nutrigo Account — Start Tracking Today" },
+      { title: "Create Your Free EgyCalorie Account — Start Tracking Today" },
       {
         name: "description",
         content:
-          "Sign up free for Nutrigo and start logging Egyptian meals, calories and macros in seconds. No card required.",
+          "Sign up free for EgyCalorie and start logging Egyptian meals, calories and macros in seconds. No card required.",
       },
-      { property: "og:title", content: "Create Your Free Nutrigo Account" },
+      { property: "og:title", content: "Create Your Free EgyCalorie Account" },
       {
         property: "og:description",
         content: "Free calorie and macro tracking built around Egyptian food. No card required.",
@@ -42,14 +43,12 @@ function Signup() {
 
   return (
     <AuthLayout
-      title="Create your free account"
-      subtitle="Two minutes to set up, then log your first meal today. No card required."
+      title={t("Create your free account")}
+      subtitle={t("Two minutes to set up, then log your first meal today. No card required.")}
       footer={
         <>
           Already have an account?{" "}
-          <Link to="/login" className="font-semibold text-primary hover:underline">
-            Log in
-          </Link>
+          <Link to="/login" className="font-semibold text-primary hover:underline">{t("Log in")}</Link>
         </>
       }
     >
@@ -62,61 +61,61 @@ function Signup() {
         }}
       >
         <div className="space-y-2">
-          <Label htmlFor="name">Full name</Label>
-          <Input id="name" required placeholder="Nour Hassan" className="h-11 rounded-xl" />
+          <Label htmlFor="name">{t("Full name")}</Label>
+          <Input id="name" required placeholder={t("Nour Hassan")} className="h-11 rounded-xl" />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t("Email")}</Label>
           <Input
             id="email"
             type="email"
             required
-            placeholder="you@example.com"
+            placeholder={t("you@example.com")}
             className="h-11 rounded-xl"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t("Password")}</Label>
           <Input
             id="password"
             type="password"
             required
-            placeholder="At least 8 characters"
+            placeholder={t("At least 8 characters")}
             className="h-11 rounded-xl"
           />
         </div>
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="space-y-2">
-            <Label htmlFor="goal">Your goal</Label>
+            <Label htmlFor="goal">{t("Your goal")}</Label>
             <Select defaultValue="lose">
               <SelectTrigger id="goal" className="h-11 rounded-xl">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="lose">Lose weight</SelectItem>
-                <SelectItem value="maintain">Maintain weight</SelectItem>
-                <SelectItem value="gain">Build muscle</SelectItem>
+                <SelectItem value="lose">{t("Lose weight")}</SelectItem>
+                <SelectItem value="maintain">{t("Maintain weight")}</SelectItem>
+                <SelectItem value="gain">{t("Build muscle")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="activity">Activity level</Label>
+            <Label htmlFor="activity">{t("Activity level")}</Label>
             <Select defaultValue="light">
               <SelectTrigger id="activity" className="h-11 rounded-xl">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="sedentary">Sedentary</SelectItem>
-                <SelectItem value="light">Lightly active</SelectItem>
-                <SelectItem value="moderate">Moderately active</SelectItem>
-                <SelectItem value="high">Very active</SelectItem>
+                <SelectItem value="sedentary">{t("Sedentary")}</SelectItem>
+                <SelectItem value="light">{t("Lightly active")}</SelectItem>
+                <SelectItem value="moderate">{t("Moderately active")}</SelectItem>
+                <SelectItem value="high">{t("Very active")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
         </div>
         <label className="flex items-start gap-2.5 text-sm text-muted-foreground">
           <Checkbox id="terms" defaultChecked className="mt-0.5" />
-          <span>I agree to the terms of service and privacy policy.</span>
+          <span>{t("I agree to the terms of service and privacy policy.")}</span>
         </label>
         <Button type="submit" size="lg" disabled={loading} className="w-full rounded-full">
           {loading ? "Creating account…" : "Create free account"}
@@ -124,17 +123,11 @@ function Signup() {
       </form>
 
       <div className="my-6 flex items-center gap-4 text-xs text-muted-foreground">
-        <span className="h-px flex-1 bg-border" />
-        or sign up with
-        <span className="h-px flex-1 bg-border" />
+        <span className="h-px flex-1 bg-border" />{t("or sign up with")}<span className="h-px flex-1 bg-border" />
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
-        <Button variant="outline" className="h-11 rounded-xl" type="button">
-          Google
-        </Button>
-        <Button variant="outline" className="h-11 rounded-xl" type="button">
-          Apple
-        </Button>
+        <Button variant="outline" className="h-11 rounded-xl" type="button">{t("Google")}</Button>
+        <Button variant="outline" className="h-11 rounded-xl" type="button">{t("Apple")}</Button>
       </div>
     </AuthLayout>
   );

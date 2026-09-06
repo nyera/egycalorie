@@ -12,13 +12,14 @@ import {
 } from "recharts";
 import { Panel, StatCard } from "@/components/app/cards";
 import { weeklyCalories, weightTrend } from "@/lib/mock-data";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/app/progress")({
   head: () => ({
     meta: [
-      { title: "Progress — Nutrigo" },
+      { title: "Progress — EgyCalorie" },
       { name: "description", content: "Weight trend and weekly calorie history." },
-      { property: "og:title", content: "Progress — Nutrigo" },
+      { property: "og:title", content: "Progress — EgyCalorie" },
       { property: "og:description", content: "Weight trend and weekly calorie history." },
     ],
   }),
@@ -28,23 +29,25 @@ export const Route = createFileRoute("/app/progress")({
 function ProgressPage() {
   const start = weightTrend[0]?.weight ?? 0;
   const now = weightTrend[weightTrend.length - 1]?.weight ?? start;
-  const avg = Math.round(weeklyCalories.reduce((s, d) => s + d.calories, 0) / weeklyCalories.length);
+  const avg = Math.round(
+    weeklyCalories.reduce((s, d) => s + d.calories, 0) / weeklyCalories.length,
+  );
 
   return (
     <div className="mx-auto max-w-6xl space-y-5">
       <div className="grid gap-4 sm:grid-cols-3">
-        <StatCard label="Current weight" value={now} unit="kg" hint={`Started at ${start} kg`} />
+        <StatCard label={t("Current weight")} value={now} unit="kg" hint={`Started at ${start} kg`} />
         <StatCard
-          label="Total change"
+          label={t("Total change")}
           value={(now - start).toFixed(1)}
           unit="kg"
-          hint="Over 8 weeks"
+          hint={t("Over 8 weeks")}
           accent="protein"
         />
-        <StatCard label="Avg daily calories" value={avg} unit="kcal" hint="Last 7 days" accent="carb" />
+        <StatCard label={t("Avg daily calories")} value={avg} unit="kcal" hint={t("Last 7 days")} accent="carb" />
       </div>
 
-      <Panel title="Weight trend" description="Last 8 weeks">
+      <Panel title={t("Weight trend")} description={t("Last 8 weeks")}>
         <div className="h-64 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={weightTrend} margin={{ left: -18, right: 8, top: 8 }}>
@@ -70,7 +73,7 @@ function ProgressPage() {
         </div>
       </Panel>
 
-      <Panel title="Calories this week" description="Against a 2,200 kcal target">
+      <Panel title={t("Calories this week")} description={t("Against a 2,200 kcal target")}>
         <div className="h-64 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={weeklyCalories} margin={{ left: -18, right: 8, top: 8 }}>
