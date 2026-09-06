@@ -1,9 +1,9 @@
+import { t } from "@/lib/i18n";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Flame, GlassWater, Plus, Utensils } from "lucide-react";
 import { Panel, StatCard } from "@/components/app/cards";
 import { Button } from "@/components/ui/button";
 import {
-import { t } from "@/lib/i18n";
   consumed,
   consumedMacros,
   dailyTargets,
