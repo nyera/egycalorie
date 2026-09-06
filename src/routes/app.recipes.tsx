@@ -4,6 +4,7 @@ import { Panel } from "@/components/app/cards";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { recipes } from "@/lib/mock-data";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/app/recipes")({
   head: () => ({
@@ -42,9 +43,7 @@ function RecipesPage() {
                     </Badge>
                   ))}
                 </div>
-                <Button variant="outline" size="sm" className="mt-4 w-full rounded-full">
-                  View recipe
-                </Button>
+                <Button variant="outline" size="sm" className="mt-4 w-full rounded-full">{t("View recipe")}</Button>
               </div>
             </article>
           ))}

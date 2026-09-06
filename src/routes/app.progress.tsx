@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { Panel, StatCard } from "@/components/app/cards";
 import { weeklyCalories, weightTrend } from "@/lib/mock-data";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/app/progress")({
   head: () => ({
@@ -28,10 +29,7 @@ export const Route = createFileRoute("/app/progress")({
 function ProgressPage() {
   const start = weightTrend[0]?.weight ?? 0;
   const now = weightTrend[weightTrend.length - 1]?.weight ?? start;
-  const avg = Math.round(weeklyCalories.reduce((s, d) => s + d.calories, 0) / weeklyCalories.length);
-
-  return (
-    <div className="mx-auto max-w-6xl space-y-5">
+  const avg = Math.round(weeklyCalories.reduce((s, d) =>{t("s + d.calories, 0) / weeklyCalories.length); return (")}<div className="mx-auto max-w-6xl space-y-5">
       <div className="grid gap-4 sm:grid-cols-3">
         <StatCard label="Current weight" value={now} unit="kg" hint={`Started at ${start} kg`} />
         <StatCard

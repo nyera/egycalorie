@@ -5,6 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { AuthLayout } from "@/components/site/AuthLayout";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -37,9 +38,7 @@ function Login() {
       footer={
         <>
           New to EgyCalorie?{" "}
-          <Link to="/signup" className="font-semibold text-primary hover:underline">
-            Create a free account
-          </Link>
+          <Link to="/signup" className="font-semibold text-primary hover:underline">{t("Create a free account")}</Link>
         </>
       }
     >
@@ -52,51 +51,41 @@ function Login() {
         }}
       >
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t("Email")}</Label>
           <Input
             id="email"
             type="email"
             required
-            placeholder="you@example.com"
+            placeholder={t("you@example.com")}
             className="h-11 rounded-xl"
           />
         </div>
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <Label htmlFor="password">Password</Label>
-            <button type="button" className="text-xs font-semibold text-primary hover:underline">
-              Forgot password?
-            </button>
+            <Label htmlFor="password">{t("Password")}</Label>
+            <button type="button" className="text-xs font-semibold text-primary hover:underline">{t("Forgot password?")}</button>
           </div>
           <Input
             id="password"
             type="password"
             required
-            placeholder="••••••••"
+            placeholder={t("\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022")}
             className="h-11 rounded-xl"
           />
         </div>
         <label className="flex items-center gap-2.5 text-sm text-muted-foreground">
-          <Checkbox id="remember" defaultChecked />
-          Keep me signed in
-        </label>
+          <Checkbox id="remember" defaultChecked />{t("Keep me signed in")}</label>
         <Button type="submit" size="lg" disabled={loading} className="w-full rounded-full">
           {loading ? "Signing in…" : "Log in"}
         </Button>
       </form>
 
       <div className="my-6 flex items-center gap-4 text-xs text-muted-foreground">
-        <span className="h-px flex-1 bg-border" />
-        or continue with
-        <span className="h-px flex-1 bg-border" />
+        <span className="h-px flex-1 bg-border" />{t("or continue with")}<span className="h-px flex-1 bg-border" />
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
-        <Button variant="outline" className="h-11 rounded-xl" type="button">
-          Google
-        </Button>
-        <Button variant="outline" className="h-11 rounded-xl" type="button">
-          Apple
-        </Button>
+        <Button variant="outline" className="h-11 rounded-xl" type="button">{t("Google")}</Button>
+        <Button variant="outline" className="h-11 rounded-xl" type="button">{t("Apple")}</Button>
       </div>
     </AuthLayout>
   );

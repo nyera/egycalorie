@@ -3,6 +3,7 @@ import { Flame, GlassWater, Plus, Utensils } from "lucide-react";
 import { Panel, StatCard } from "@/components/app/cards";
 import { Button } from "@/components/ui/button";
 import {
+import { t } from "@/lib/i18n";
   consumed,
   consumedMacros,
   dailyTargets,
@@ -66,8 +67,7 @@ function MyDay() {
           action={
             <Button asChild size="sm" className="rounded-full">
               <Link to="/app/diary">
-                <Plus className="mr-1 h-4 w-4" /> Add food
-              </Link>
+                <Plus className="mr-1 h-4 w-4" />{t("Add food")}</Link>
             </Button>
           }
         >
@@ -116,7 +116,7 @@ function MyDay() {
                 <p className="font-display text-3xl font-extrabold tracking-tight">
                   {remaining > 0 ? remaining : 0}
                 </p>
-                <p className="text-xs text-muted-foreground">kcal remaining today</p>
+                <p className="text-xs text-muted-foreground">{t("kcal remaining today")}</p>
               </div>
             </div>
             <div className="mt-4 h-2.5 w-full overflow-hidden rounded-full bg-muted">

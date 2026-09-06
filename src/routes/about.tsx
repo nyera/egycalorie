@@ -3,6 +3,7 @@ import { HeartPulse, Salad, Sparkles, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -64,15 +65,9 @@ function About() {
 
       <section className="surface-glow">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8 lg:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">About us</p>
-          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">
-            Nutrition tracking that speaks your kitchen
-          </h1>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Every tracker we tried made us translate our food into something else. A plate of koshari
-            became "rice, pasta, lentils, tomato sauce" — four guesses instead of one meal. So we
-            built the tracker we wanted: one where Egyptian food is the default, not an exception.
-          </p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">{t("About us")}</p>
+          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">{t("Nutrition tracking that speaks your kitchen")}</h1>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">{t("Every tracker we tried made us translate our food into something else. A plate of koshari became \"rice, pasta, lentils, tomato sauce\" \u2014 four guesses instead of one meal. So we built the tracker we wanted: one where Egyptian food is the default, not an exception.")}</p>
         </div>
       </section>
 
@@ -89,7 +84,7 @@ function About() {
 
       <section className="border-y border-border bg-secondary/40">
         <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-20">
-          <h2 className="text-center text-3xl font-extrabold sm:text-4xl">What we believe</h2>
+          <h2 className="text-center text-3xl font-extrabold sm:text-4xl">{t("What we believe")}</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {values.map((v) => (
               <div key={v.title} className="rounded-3xl border border-border bg-card p-7">
@@ -108,35 +103,23 @@ function About() {
         <div className="rounded-[2rem] border border-border bg-card p-8 sm:p-12">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div>
-              <h2 className="text-3xl font-extrabold sm:text-4xl">Our story</h2>
+              <h2 className="text-3xl font-extrabold sm:text-4xl">{t("Our story")}</h2>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>
-                  EgyCalorie started in 2024 as a spreadsheet shared between a nutritionist and a
-                  developer in Maadi. It held portion weights for the dishes their clients ate every
-                  week — a loaf of baladi bread, a bowl of ful, a plate of fatta from a family lunch.
-                </p>
-                <p>
-                  That spreadsheet became a database, the database became an app, and the app is now
-                  used by thousands of people who finally see their own food on the screen.
-                </p>
-                <p>
-                  We are a small team of engineers, designers and a registered dietitian. We ship
-                  every week and read every message.
-                </p>
+                <p>{t("EgyCalorie started in 2024 as a spreadsheet shared between a nutritionist and a developer in Maadi. It held portion weights for the dishes their clients ate every week \u2014 a loaf of baladi bread, a bowl of ful, a plate of fatta from a family lunch.")}</p>
+                <p>{t("That spreadsheet became a database, the database became an app, and the app is now used by thousands of people who finally see their own food on the screen.")}</p>
+                <p>{t("We are a small team of engineers, designers and a registered dietitian. We ship every week and read every message.")}</p>
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button asChild size="lg" className="rounded-full px-6">
-                  <Link to="/signup">Start free</Link>
+                  <Link to="/signup">{t("Start free")}</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="rounded-full px-6">
-                  <Link to="/contact">Talk to us</Link>
+                  <Link to="/contact">{t("Talk to us")}</Link>
                 </Button>
               </div>
             </div>
             <div className="rounded-3xl bg-secondary/60 p-7">
-              <h3 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
-                How we work
-              </h3>
+              <h3 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">{t("How we work")}</h3>
               <ul className="mt-4 space-y-4 text-sm">
                 {[
                   "Every food entry is reviewed against a real portion, weighed in a home kitchen.",

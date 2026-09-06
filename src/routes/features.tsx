@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/features")({
   head: () => ({
@@ -53,14 +54,9 @@ function Features() {
 
       <section className="surface-glow">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8 lg:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Features</p>
-          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">
-            Everything in one daily nutrition tool
-          </h1>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            EgyCalorie covers the full loop: log what you eat, understand it, plan the next week and
-            watch the trend move.
-          </p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">{t("Features")}</p>
+          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">{t("Everything in one daily nutrition tool")}</h1>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">{t("EgyCalorie covers the full loop: log what you eat, understand it, plan the next week and watch the trend move.")}</p>
         </div>
       </section>
 
@@ -83,12 +79,10 @@ function Features() {
       <section className="bg-card py-16 lg:py-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 text-center lg:px-8">
           <Apple className="h-8 w-8 text-primary" />
-          <h2 className="text-3xl font-extrabold">Try it on today's meals</h2>
-          <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
-            Create an account and log your first day in under two minutes.
-          </p>
+          <h2 className="text-3xl font-extrabold">{t("Try it on today's meals")}</h2>
+          <p className="max-w-xl text-sm text-muted-foreground sm:text-base">{t("Create an account and log your first day in under two minutes.")}</p>
           <Button asChild size="lg" className="rounded-full px-8">
-            <Link to="/signup">Start free</Link>
+            <Link to="/signup">{t("Start free")}</Link>
           </Button>
         </div>
       </section>

@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { consumed, consumedMacros, dailyTargets, todayMeals } from "@/lib/mock-data";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,39 +88,30 @@ function Home() {
         <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-16 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:px-8 lg:pb-24 lg:pt-20">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary">
-              <Sparkles className="h-3.5 w-3.5" />
-              Made for Egyptian & Arab meals
-            </span>
+              <Sparkles className="h-3.5 w-3.5" />{t("Made for Egyptian & Arab meals")}</span>
             <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl">
               Track your food the way{" "}
-              <span className="text-primary">you actually eat</span>
+              <span className="text-primary">{t("you actually eat")}</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              EgyCalorie turns calorie and macro tracking into a 20-second habit. Log ful in the
-              morning and koshari at lunch — and still know exactly where your day stands.
-            </p>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">{t("EgyCalorie turns calorie and macro tracking into a 20-second habit. Log ful in the morning and koshari at lunch \u2014 and still know exactly where your day stands.")}</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full px-7 text-base">
-                <Link to="/signup">
-                  Create free account <ArrowRight className="ml-1 h-4 w-4" />
+                <Link to="/signup">{t("Create free account")}<ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-7 text-base">
-                <Link to="/login">Log in</Link>
+                <Link to="/login">{t("Log in")}</Link>
               </Button>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-primary" /> Free forever plan
-              </span>
+                <Check className="h-4 w-4 text-primary" />{t("Free forever plan")}</span>
               <span className="inline-flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-primary" /> No credit card
-              </span>
+                <Check className="h-4 w-4 text-primary" />{t("No credit card")}</span>
               <span className="inline-flex items-center gap-1.5">
-                <Star className="h-4 w-4 fill-warning text-warning" /> 4.9 average rating
-              </span>
+                <Star className="h-4 w-4 fill-warning text-warning" />{t("4.9 average rating")}</span>
             </div>
           </div>
 
@@ -181,8 +173,7 @@ function Home() {
         </div>
         <div className="mt-8">
           <Button asChild variant="outline" className="rounded-full">
-            <Link to="/features">
-              See all features <ArrowRight className="ml-1 h-4 w-4" />
+            <Link to="/features">{t("See all features")}<ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
         </div>
@@ -197,11 +188,7 @@ function Home() {
               title="Local dishes, real portions, honest numbers"
               align="left"
             />
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Most trackers make you rebuild every Egyptian meal from scratch. EgyCalorie starts with
-              the dishes on your table — with portions like "1 loaf of baladi bread" or "1 medium
-              plate of koshari".
-            </p>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">{t("Most trackers make you rebuild every Egyptian meal from scratch. EgyCalorie starts with the dishes on your table \u2014 with portions like \"1 loaf of baladi bread\" or \"1 medium plate of koshari\".")}</p>
             <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
               {["Ful & taameya", "Koshari & pasta", "Molokhia & mahshi", "Fatta & grilled meat", "Baladi bread & rice", "Egyptian desserts"].map(
                 (i) => (
@@ -280,19 +267,14 @@ function Home() {
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <div className="surface-glow overflow-hidden rounded-[2rem] border border-primary/20 bg-card px-6 py-14 text-center lg:px-16">
-            <h2 className="mx-auto max-w-2xl text-3xl font-extrabold sm:text-4xl">
-              Your next healthy day starts with one log
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
-              Join thousands of people tracking Egyptian food without spreadsheets, guesswork or
-              giving up their favourite meals.
-            </p>
+            <h2 className="mx-auto max-w-2xl text-3xl font-extrabold sm:text-4xl">{t("Your next healthy day starts with one log")}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">{t("Join thousands of people tracking Egyptian food without spreadsheets, guesswork or giving up their favourite meals.")}</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full px-8 text-base">
-                <Link to="/signup">Get started free</Link>
+                <Link to="/signup">{t("Get started free")}</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-8 text-base">
-                <Link to="/pricing">See pricing</Link>
+                <Link to="/pricing">{t("See pricing")}</Link>
               </Button>
             </div>
           </div>
@@ -312,8 +294,8 @@ function AppPreview({ remaining }: { remaining: number }) {
       <div className="rounded-[2rem] border border-border bg-card p-5 shadow-2xl shadow-primary/10">
         <div className="flex items-center justify-between">
           <div className="min-w-0">
-            <p className="text-xs text-muted-foreground">Today</p>
-            <p className="truncate font-display text-lg font-bold">My Day</p>
+            <p className="text-xs text-muted-foreground">{t("Today")}</p>
+            <p className="truncate font-display text-lg font-bold">{t("My Day")}</p>
           </div>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             {pct}% of budget
@@ -321,7 +303,7 @@ function AppPreview({ remaining }: { remaining: number }) {
         </div>
 
         <div className="mt-5 rounded-2xl bg-muted/60 p-5 text-center">
-          <p className="text-xs font-medium text-muted-foreground">Remaining</p>
+          <p className="text-xs font-medium text-muted-foreground">{t("Remaining")}</p>
           <p className="font-display text-4xl font-extrabold">{remaining}</p>
           <p className="text-xs text-muted-foreground">of {dailyTargets.calories} kcal</p>
           <div className="mt-4 h-2.5 overflow-hidden rounded-full bg-border">

@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -55,12 +56,9 @@ function Contact() {
 
       <section className="surface-glow">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8 lg:py-20">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Contact</p>
-          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">We'd love to hear from you</h1>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Missing a dish from the database? Stuck on a feature? Want to work together? Send us a
-            message and a real person will read it.
-          </p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">{t("Contact")}</p>
+          <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">{t("We'd love to hear from you")}</h1>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">{t("Missing a dish from the database? Stuck on a feature? Want to work together? Send us a message and a real person will read it.")}</p>
         </div>
       </section>
 
@@ -80,44 +78,44 @@ function Contact() {
               }, 700);
             }}
           >
-            <h2 className="text-xl font-extrabold">Send a message</h2>
+            <h2 className="text-xl font-extrabold">{t("Send a message")}</h2>
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="name">Full name</Label>
-                <Input id="name" required placeholder="Nour Hassan" className="h-11 rounded-xl" />
+                <Label htmlFor="name">{t("Full name")}</Label>
+                <Input id="name" required placeholder={t("Nour Hassan")} className="h-11 rounded-xl" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t("Email")}</Label>
                 <Input
                   id="email"
                   type="email"
                   required
-                  placeholder="nour@example.com"
+                  placeholder={t("nour@example.com")}
                   className="h-11 rounded-xl"
                 />
               </div>
             </div>
             <div className="mt-5 space-y-2">
-              <Label htmlFor="topic">Topic</Label>
+              <Label htmlFor="topic">{t("Topic")}</Label>
               <Select defaultValue="support">
                 <SelectTrigger id="topic" className="h-11 rounded-xl">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="support">Product support</SelectItem>
-                  <SelectItem value="database">Food database correction</SelectItem>
-                  <SelectItem value="billing">Billing question</SelectItem>
-                  <SelectItem value="partnership">Partnership</SelectItem>
+                  <SelectItem value="support">{t("Product support")}</SelectItem>
+                  <SelectItem value="database">{t("Food database correction")}</SelectItem>
+                  <SelectItem value="billing">{t("Billing question")}</SelectItem>
+                  <SelectItem value="partnership">{t("Partnership")}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="mt-5 space-y-2">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">{t("Message")}</Label>
               <Textarea
                 id="message"
                 required
                 rows={6}
-                placeholder="Tell us what's on your mind…"
+                placeholder={t("Tell us what's on your mind\u2026")}
                 className="rounded-xl"
               />
             </div>
@@ -129,9 +127,7 @@ function Contact() {
             >
               {sending ? "Sending…" : "Send message"}
             </Button>
-            <p className="mt-3 text-xs text-muted-foreground">
-              This demo form doesn't store data yet.
-            </p>
+            <p className="mt-3 text-xs text-muted-foreground">{t("This demo form doesn't store data yet.")}</p>
           </form>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">

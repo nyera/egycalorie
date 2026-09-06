@@ -13,6 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { egyptianFoods, mealCalories, todayMeals } from "@/lib/mock-data";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/app/diary")({
   head: () => ({
@@ -44,7 +45,7 @@ function Diary() {
           <Input
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Try ful, koshari, molokhia…"
+            placeholder={t("Try ful, koshari, molokhia\u2026")}
             aria-label="Search foods"
             className="h-11 rounded-full pl-9"
           />
@@ -86,12 +87,12 @@ function Diary() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Food</TableHead>
-                  <TableHead>Portion</TableHead>
+                  <TableHead>{t("Food")}</TableHead>
+                  <TableHead>{t("Portion")}</TableHead>
                   <TableHead className="text-right">P</TableHead>
                   <TableHead className="text-right">C</TableHead>
                   <TableHead className="text-right">F</TableHead>
-                  <TableHead className="text-right">kcal</TableHead>
+                  <TableHead className="text-right">{t("kcal")}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

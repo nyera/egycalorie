@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Panel } from "@/components/app/cards";
 import { Badge } from "@/components/ui/badge";
 import { mealPlan } from "@/lib/mock-data";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/app/plan")({
   head: () => ({
@@ -26,7 +27,7 @@ function PlanPage() {
             <article key={day.day} className="rounded-2xl border border-border p-4">
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-sm font-extrabold">{day.day}</h3>
-                <Badge variant="secondary" className="rounded-full">4 meals</Badge>
+                <Badge variant="secondary" className="rounded-full">{t("4 meals")}</Badge>
               </div>
               <dl className="mt-3 space-y-2">
                 {slots.map((slot) => (
