@@ -26,8 +26,8 @@ export const Route = createFileRoute("/app/progress")({
 });
 
 function ProgressPage() {
-  const start = weightTrend[0].weight;
-  const now = weightTrend[weightTrend.length - 1].weight;
+  const start = weightTrend[0]?.weight ?? 0;
+  const now = weightTrend[weightTrend.length - 1]?.weight ?? start;
   const avg = Math.round(weeklyCalories.reduce((s, d) => s + d.calories, 0) / weeklyCalories.length);
 
   return (
