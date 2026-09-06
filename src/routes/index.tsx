@@ -224,17 +224,19 @@ function Home() {
       {/* TESTIMONIALS */}
       <Section eyebrow={t("Social proof")} title={t("Loved by people who tried everything else")}>
         <div className="grid gap-4 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t(t.name)} className="rounded-3xl border border-border bg-card p-6">
+          {testimonials.map((item) => (
+            <figure key={item.name} className="rounded-3xl border border-border bg-card p-6">
               <Quote className="h-6 w-6 text-primary/40" />
-              <blockquote className="mt-3 text-sm leading-relaxed">{t(t.text)}</blockquote>
+              <blockquote className="mt-3 text-sm leading-relaxed">{t(item.text)}</blockquote>
               <figcaption className="mt-5 flex items-center gap-3">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                  {t.name.charAt(0)}
+                  {t(item.name).charAt(0)}
                 </span>
                 <span className="min-w-0">
-                  <span className="block truncate text-sm font-bold">{t(t.name)}</span>
-                  <span className="block truncate text-xs text-muted-foreground">{t(t.role)}</span>
+                  <span className="block truncate text-sm font-bold">{t(item.name)}</span>
+                  <span className="block truncate text-xs text-muted-foreground">
+                    {t(item.role)}
+                  </span>
                 </span>
               </figcaption>
             </figure>
