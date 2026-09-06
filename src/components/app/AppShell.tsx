@@ -37,7 +37,12 @@ const mobileNav = appNav.slice(0, 5);
 export function AppShell() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const current = appNav.find((n) =>{t("(n.exact ? pathname === n.to : pathname.startsWith(n.to))); return (")}<div className="min-h-screen bg-secondary/30">
+  const current = appNav.find((n) =>
+    n.exact ? pathname === n.to : pathname.startsWith(n.to),
+  );
+
+  return (
+    <div className="min-h-screen bg-secondary/30">
       {/* Sidebar — desktop */}
       <aside className="fixed inset-y-0 left-0 hidden w-[248px] flex-col border-r border-border bg-card lg:flex">
         <div className="flex h-16 items-center gap-2 px-6">
