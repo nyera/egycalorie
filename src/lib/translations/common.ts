@@ -1,1 +1,38 @@
-export const common: Record<string, string> = {};
+export const common: Record<string, string> = {
+  EgyCalorie: "إيجي كالوري",
+  Home: "الرئيسية",
+  Features: "المميزات",
+  Pricing: "الأسعار",
+  About: "من نحن",
+  Contact: "تواصل معنا",
+  "Log in": "تسجيل الدخول",
+  "Start free": "ابدأ مجانًا",
+  "Toggle menu": "فتح القائمة",
+  "Open menu": "فتح القائمة",
+  "Close menu": "إغلاق القائمة",
+  Product: "المنتج",
+  Company: "الشركة",
+  Account: "الحساب",
+  "Open app": "فتح التطبيق",
+  "Create account": "إنشاء حساب",
+  "Create free account": "أنشئ حسابًا مجانيًا",
+  "Get started free": "ابدأ مجانًا",
+  "See pricing": "شاهد الأسعار",
+  "See all features": "كل المميزات",
+  "Calorie and macro tracking built for the way Egypt eats — ful, koshari, molokhia and everything in between.":
+    "تتبّع السعرات والماكروز مصمم لطريقة أكلنا في مصر — فول وكشري وملوخية وكل ما بينهما.",
+  "All rights reserved.": "جميع الحقوق محفوظة.",
+  "Made in Cairo · Nutrition data is for guidance only.":
+    "صُنع في القاهرة · بيانات التغذية للإرشاد فقط.",
+  "Built for Egyptian kitchens": "مصمم للمطبخ المصري",
+  "Track ful, koshari and molokhia — not vague substitutes.":
+    "تتبّع الفول والكشري والملوخية — وليس بدائل تقريبية.",
+  "1,400+ Egyptian foods with real portions": "أكثر من 1400 صنف مصري بأحجام واقعية",
+  "Calorie budget and macro rings that update live": "ميزانية سعرات وحلقات ماكروز تتحدث فورًا",
+  "Weekly meal plans and grocery lists": "خطط أسبوعية وقوائم تسوق",
+  "Recipes with per-serving macros": "وصفات بماكروز لكل حصة",
+  "Weight trend & progress charts": "منحنى الوزن ورسوم التقدم",
+  "Mariam T. — lost 9 kg with EgyCalorie": "مريم ط. — خسرت ٩ كجم مع إيجي كالوري",
+  "“First tracker where I could log a plate of koshari in one tap. I finally stayed consistent for a full three months.”":
+    "«أول تطبيق أقدر أسجّل فيه طبق كشري بضغطة واحدة. أخيرًا التزمت ثلاثة شهور كاملة.»",
+};
