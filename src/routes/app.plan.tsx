@@ -21,7 +21,7 @@ const slots = ["breakfast", "lunch", "dinner", "snack"] as const;
 function PlanPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-5">
-      <Panel title="This week" description="Balanced Egyptian meals, roughly 2,200 kcal per day">
+      <Panel title={t("This week")} description={t("Balanced Egyptian meals, roughly 2,200 kcal per day")}>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {mealPlan.map((day) => (
             <article key={day.day} className="rounded-2xl border border-border p-4">

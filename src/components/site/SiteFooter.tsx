@@ -18,7 +18,7 @@ export function SiteFooter() {
           </div>
 
           <FooterCol
-            title="Product"
+            title={t("Product")}
             links={[
               { to: "/features", label: "Features" },
               { to: "/pricing", label: "Pricing" },
@@ -26,14 +26,14 @@ export function SiteFooter() {
             ]}
           />
           <FooterCol
-            title="Company"
+            title={t("Company")}
             links={[
               { to: "/about", label: "About" },
               { to: "/contact", label: "Contact" },
             ]}
           />
           <FooterCol
-            title="Account"
+            title={t("Account")}
             links={[
               { to: "/login", label: "Log in" },
               { to: "/signup", label: "Create account" },
@@ -67,7 +67,7 @@ function FooterCol({
               to={l.to}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              {l.label}
+              {t(l.label)}
             </Link>
           </li>
         ))}

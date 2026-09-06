@@ -77,14 +77,14 @@ export function AppShell() {
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <button
-            aria-label="Close menu"
+            aria-label={t("Close menu")}
             className="absolute inset-0 bg-foreground/40"
             onClick={() => setOpen(false)}
           />
           <div className="absolute inset-y-0 left-0 flex w-[264px] flex-col bg-card">
             <div className="flex h-16 items-center justify-between px-5">
               <span className="font-display text-lg font-extrabold">{t("EgyCalorie")}</span>
-              <button aria-label="Close menu" onClick={() => setOpen(false)}>
+              <button aria-label={t("Close menu")} onClick={() => setOpen(false)}>
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -103,7 +103,7 @@ export function AppShell() {
           <div className="flex h-16 items-center gap-3 px-4 sm:px-6">
             <button
               type="button"
-              aria-label="Open menu"
+              aria-label={t("Open menu")}
               onClick={() => setOpen(true)}
               className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border lg:hidden"
             >
@@ -118,12 +118,12 @@ export function AppShell() {
                 <Input
                   placeholder={t("Search foods\u2026")}
                   className="h-10 w-56 rounded-full pl-9 lg:w-64"
-                  aria-label="Search foods"
+                  aria-label={t("Search foods")}
                 />
               </div>
               <button
                 type="button"
-                aria-label="Notifications"
+                aria-label={t("Notifications")}
                 className="relative grid h-10 w-10 place-items-center rounded-full border border-border bg-card"
               >
                 <Bell className="h-4 w-4" />
@@ -131,7 +131,7 @@ export function AppShell() {
               </button>
               <button
                 type="button"
-                aria-label="Settings"
+                aria-label={t("Settings")}
                 className="hidden h-10 w-10 place-items-center rounded-full border border-border bg-card sm:grid"
               >
                 <Settings className="h-4 w-4" />
@@ -180,7 +180,7 @@ function NavItem({ item }: { item: (typeof appNav)[number] }) {
       activeProps={{ className: "!bg-primary !text-primary-foreground hover:!bg-primary" }}
     >
       <item.icon className="h-4.5 w-4.5" />
-      {item.label}
+      {t(item.label)}
     </Link>
   );
 }

@@ -120,7 +120,7 @@ function Pricing() {
         <div className="grid gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
-              key={plan.name}
+              key={t(plan.name)}
               className={cn(
                 "flex flex-col rounded-[1.75rem] border bg-card p-7",
                 plan.featured
@@ -129,7 +129,7 @@ function Pricing() {
               )}
             >
               <div className="flex items-center justify-between">
-                <h2 className="font-display text-xl font-extrabold">{plan.name}</h2>
+                <h2 className="font-display text-xl font-extrabold">{t(plan.name)}</h2>
                 {plan.featured && (
                   <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">{t("Most popular")}</span>
                 )}
@@ -167,10 +167,10 @@ function Pricing() {
           <h2 className="text-center text-3xl font-extrabold sm:text-4xl">{t("Common questions")}</h2>
           <Accordion type="single" collapsible className="mt-8">
             {faqs.map((f) => (
-              <AccordionItem key={f.q} value={f.q}>
-                <AccordionTrigger className="text-left text-base font-bold">{f.q}</AccordionTrigger>
+              <AccordionItem key={t(f.q)} value={t(f.q)}>
+                <AccordionTrigger className="text-left text-base font-bold">{t(f.q)}</AccordionTrigger>
                 <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
-                  {f.a}
+                  {t(f.a)}
                 </AccordionContent>
               </AccordionItem>
             ))}

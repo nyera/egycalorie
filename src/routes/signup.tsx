@@ -43,8 +43,8 @@ function Signup() {
 
   return (
     <AuthLayout
-      title="Create your free account"
-      subtitle="Two minutes to set up, then log your first meal today. No card required."
+      title={t("Create your free account")}
+      subtitle={t("Two minutes to set up, then log your first meal today. No card required.")}
       footer={
         <>
           Already have an account?{" "}

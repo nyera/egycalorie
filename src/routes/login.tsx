@@ -33,8 +33,8 @@ function Login() {
 
   return (
     <AuthLayout
-      title="Welcome back"
-      subtitle="Log in to pick up your diary exactly where you left it."
+      title={t("Welcome back")}
+      subtitle={t("Log in to pick up your diary exactly where you left it.")}
       footer={
         <>
           New to EgyCalorie?{" "}

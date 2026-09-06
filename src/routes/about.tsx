@@ -74,9 +74,9 @@ function About() {
       <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="rounded-3xl border border-border bg-card p-6 text-center">
+            <div key={t(s.label)} className="rounded-3xl border border-border bg-card p-6 text-center">
               <p className="font-display text-3xl font-extrabold text-primary">{s.value}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{t(s.label)}</p>
             </div>
           ))}
         </div>
@@ -87,12 +87,12 @@ function About() {
           <h2 className="text-center text-3xl font-extrabold sm:text-4xl">{t("What we believe")}</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {values.map((v) => (
-              <div key={v.title} className="rounded-3xl border border-border bg-card p-7">
+              <div key={t(v.title)} className="rounded-3xl border border-border bg-card p-7">
                 <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
                   <v.icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-5 text-lg font-bold">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
+                <h3 className="mt-5 text-lg font-bold">{t(v.title)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(v.text)}</p>
               </div>
             ))}
           </div>

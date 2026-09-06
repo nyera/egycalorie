@@ -36,18 +36,18 @@ function ProgressPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-5">
       <div className="grid gap-4 sm:grid-cols-3">
-        <StatCard label="Current weight" value={now} unit="kg" hint={`Started at ${start} kg`} />
+        <StatCard label={t("Current weight")} value={now} unit="kg" hint={`Started at ${start} kg`} />
         <StatCard
-          label="Total change"
+          label={t("Total change")}
           value={(now - start).toFixed(1)}
           unit="kg"
-          hint="Over 8 weeks"
+          hint={t("Over 8 weeks")}
           accent="protein"
         />
-        <StatCard label="Avg daily calories" value={avg} unit="kcal" hint="Last 7 days" accent="carb" />
+        <StatCard label={t("Avg daily calories")} value={avg} unit="kcal" hint={t("Last 7 days")} accent="carb" />
       </div>
 
-      <Panel title="Weight trend" description="Last 8 weeks">
+      <Panel title={t("Weight trend")} description={t("Last 8 weeks")}>
         <div className="h-64 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={weightTrend} margin={{ left: -18, right: 8, top: 8 }}>
@@ -73,7 +73,7 @@ function ProgressPage() {
         </div>
       </Panel>
 
-      <Panel title="Calories this week" description="Against a 2,200 kcal target">
+      <Panel title={t("Calories this week")} description={t("Against a 2,200 kcal target")}>
         <div className="h-64 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={weeklyCalories} margin={{ left: -18, right: 8, top: 8 }}>

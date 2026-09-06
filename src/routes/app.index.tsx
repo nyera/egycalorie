@@ -31,28 +31,28 @@ function MyDay() {
     <div className="mx-auto max-w-6xl space-y-5">
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <StatCard
-          label="Calories eaten"
+          label={t("Calories eaten")}
           value={consumed}
           unit="kcal"
           progress={pct}
           hint={`${pct}% of ${dailyTargets.calories} kcal budget`}
         />
         <StatCard
-          label="Protein"
+          label={t("Protein")}
           value={consumedMacros.protein}
           unit={`/ ${dailyTargets.protein} g`}
           accent="protein"
           progress={(consumedMacros.protein / dailyTargets.protein) * 100}
         />
         <StatCard
-          label="Carbs"
+          label={t("Carbs")}
           value={consumedMacros.carbs}
           unit={`/ ${dailyTargets.carbs} g`}
           accent="carb"
           progress={(consumedMacros.carbs / dailyTargets.carbs) * 100}
         />
         <StatCard
-          label="Fat"
+          label={t("Fat")}
           value={consumedMacros.fat}
           unit={`/ ${dailyTargets.fat} g`}
           accent="fat"
@@ -62,8 +62,8 @@ function MyDay() {
 
       <div className="grid gap-5 lg:grid-cols-[1.6fr_1fr]">
         <Panel
-          title="Today's meals"
-          description="Breakfast, lunch, dinner and snacks"
+          title={t("Today's meals")}
+          description={t("Breakfast, lunch, dinner and snacks")}
           action={
             <Button asChild size="sm" className="rounded-full">
               <Link to="/app/diary">
@@ -82,7 +82,7 @@ function MyDay() {
                         <Utensils className="h-4.5 w-4.5" />
                       </span>
                       <div>
-                        <p className="text-sm font-bold">{meal.label}</p>
+                        <p className="text-sm font-bold">{t(meal.label)}</p>
                         <p className="text-xs text-muted-foreground">
                           {meal.time} · target {meal.target} kcal
                         </p>
@@ -96,7 +96,7 @@ function MyDay() {
                         key={item.id + meal.key}
                         className="rounded-full bg-muted px-3 py-1 text-xs font-semibold"
                       >
-                        {item.emoji} {item.name} · {item.calories}
+                        {item.emoji} {t(item.name)} · {item.calories}
                       </span>
                     ))}
                   </div>
@@ -107,7 +107,7 @@ function MyDay() {
         </Panel>
 
         <div className="space-y-5">
-          <Panel title="Calorie budget">
+          <Panel title={t("Calorie budget")}>
             <div className="flex items-center gap-4">
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground">
                 <Flame className="h-6 w-6" />
@@ -124,7 +124,7 @@ function MyDay() {
             </div>
           </Panel>
 
-          <Panel title="Water">
+          <Panel title={t("Water")}>
             <div className="flex flex-wrap gap-2">
               {Array.from({ length: dailyTargets.water }).map((_, i) => (
                 <span

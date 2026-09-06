@@ -39,14 +39,14 @@ function Diary() {
 
   return (
     <div className="mx-auto max-w-6xl space-y-5">
-      <Panel title="Add food" description="Search Egyptian and everyday foods">
+      <Panel title={t("Add food")} description={t("Search Egyptian and everyday foods")}>
         <div className="relative">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder={t("Try ful, koshari, molokhia\u2026")}
-            aria-label="Search foods"
+            aria-label={t("Search foods")}
             className="h-11 rounded-full pl-9"
           />
         </div>
@@ -58,13 +58,13 @@ function Diary() {
             >
               <div className="min-w-0">
                 <p className="truncate text-sm font-bold">
-                  {f.emoji} {f.name}
+                  {f.emoji} {t(f.name)}
                 </p>
                 <p className="truncate text-xs text-muted-foreground">
                   {f.nameAr} · {f.portion} · {f.calories} kcal
                 </p>
               </div>
-              <Button size="icon" variant="secondary" className="h-9 w-9 shrink-0 rounded-full" aria-label={`Add ${f.name}`}>
+              <Button size="icon" variant="secondary" className="h-9 w-9 shrink-0 rounded-full" aria-label={`Add ${t(f.name)}`}>
                 <Plus className="h-4 w-4" />
               </Button>
             </li>
@@ -80,7 +80,7 @@ function Diary() {
       {todayMeals.map((meal) => (
         <Panel
           key={meal.key}
-          title={meal.label}
+          title={t(meal.label)}
           description={`${meal.time} · ${mealCalories(meal)} of ${meal.target} kcal`}
         >
           <div className="overflow-x-auto">
@@ -99,7 +99,7 @@ function Diary() {
                 {meal.items.map((item) => (
                   <TableRow key={meal.key + item.id}>
                     <TableCell className="font-semibold">
-                      {item.emoji} {item.name}
+                      {item.emoji} {t(item.name)}
                       <span className="ml-2 text-xs text-muted-foreground">{item.nameAr}</span>
                     </TableCell>
                     <TableCell className="text-muted-foreground">{item.portion}</TableCell>

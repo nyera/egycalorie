@@ -64,12 +64,12 @@ function Features() {
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c) => (
-              <div key={c.title} className="rounded-3xl border border-border bg-card p-6">
+              <div key={t(c.title)} className="rounded-3xl border border-border bg-card p-6">
                 <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
                   <c.icon className="h-5 w-5" />
                 </span>
-                <h2 className="mt-4 text-base font-bold">{c.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.text}</p>
+                <h2 className="mt-4 text-base font-bold">{t(c.title)}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(c.text)}</p>
               </div>
             ))}
           </div>

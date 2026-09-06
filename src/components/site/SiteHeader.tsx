@@ -35,7 +35,7 @@ export function SiteHeader() {
                 className="rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 activeProps={{ className: "!text-foreground bg-muted" }}
               >
-                {item.label}
+                {t(item.label)}
               </Link>
             ))}
           </nav>
@@ -52,7 +52,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          aria-label="Toggle menu"
+          aria-label={t("Toggle menu")}
           onClick={() => setOpen((v) => !v)}
           className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border md:hidden"
         >
@@ -71,7 +71,7 @@ export function SiteHeader() {
               activeProps={{ className: "!text-foreground bg-muted" }}
               activeOptions={{ exact: item.to === "/" }}
             >
-              {item.label}
+              {t(item.label)}
             </Link>
           ))}
           <div className="mt-3 grid grid-cols-2 gap-2">

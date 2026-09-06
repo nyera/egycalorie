@@ -121,20 +121,20 @@ function Home() {
 
       {/* BENEFITS */}
       <Section
-        eyebrow="Why EgyCalorie"
-        title="Everything you need to eat better — nothing you don't"
+        eyebrow={t("Why EgyCalorie")}
+        title={t("Everything you need to eat better \u2014 nothing you don't")}
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((b) => (
             <div
-              key={b.title}
+              key={t(b.title)}
               className="rounded-3xl border border-border bg-card p-6 transition-shadow hover:shadow-lg hover:shadow-primary/5"
             >
               <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
                 <b.icon className="h-5 w-5" />
               </span>
-              <h3 className="mt-4 text-base font-bold">{b.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.text}</p>
+              <h3 className="mt-4 text-base font-bold">{t(b.title)}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(b.text)}</p>
             </div>
           ))}
         </div>
@@ -143,13 +143,13 @@ function Home() {
       {/* HOW IT WORKS */}
       <section className="bg-card py-16 lg:py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <Heading eyebrow="How it works" title="Three steps to a day you can measure" />
+          <Heading eyebrow={t("How it works")} title={t("Three steps to a day you can measure")} />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {steps.map((s) => (
               <div key={s.n} className="rounded-3xl border border-border bg-background p-7">
                 <span className="font-display text-3xl font-extrabold text-primary/30">{s.n}</span>
-                <h3 className="mt-3 text-lg font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                <h3 className="mt-3 text-lg font-bold">{t(s.title)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(s.text)}</p>
               </div>
             ))}
           </div>
@@ -157,16 +157,16 @@ function Home() {
       </section>
 
       {/* FEATURES */}
-      <Section eyebrow="Features" title="A complete daily nutrition tool">
+      <Section eyebrow={t("Features")} title={t("A complete daily nutrition tool")}>
         <div className="grid gap-4 sm:grid-cols-2">
           {features.map((f) => (
-            <div key={f.title} className="flex gap-4 rounded-3xl border border-border bg-card p-6">
+            <div key={t(f.title)} className="flex gap-4 rounded-3xl border border-border bg-card p-6">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground">
                 <f.icon className="h-5 w-5" />
               </span>
               <div className="min-w-0">
-                <h3 className="text-base font-bold">{f.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
+                <h3 className="text-base font-bold">{t(f.title)}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t(f.text)}</p>
               </div>
             </div>
           ))}
@@ -184,8 +184,8 @@ function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-2 lg:items-center lg:px-8">
           <div>
             <Heading
-              eyebrow="Egyptian food support"
-              title="Local dishes, real portions, honest numbers"
+              eyebrow={t("Egyptian food support")}
+              title={t("Local dishes, real portions, honest numbers")}
               align="left"
             />
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">{t("Most trackers make you rebuild every Egyptian meal from scratch. EgyCalorie starts with the dishes on your table \u2014 with portions like \"1 loaf of baladi bread\" or \"1 medium plate of koshari\".")}</p>
@@ -222,19 +222,19 @@ function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <Section eyebrow="Social proof" title="Loved by people who tried everything else">
+      <Section eyebrow={t("Social proof")} title={t("Loved by people who tried everything else")}>
         <div className="grid gap-4 md:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} className="rounded-3xl border border-border bg-card p-6">
+            <figure key={t(t.name)} className="rounded-3xl border border-border bg-card p-6">
               <Quote className="h-6 w-6 text-primary/40" />
-              <blockquote className="mt-3 text-sm leading-relaxed">{t.text}</blockquote>
+              <blockquote className="mt-3 text-sm leading-relaxed">{t(t.text)}</blockquote>
               <figcaption className="mt-5 flex items-center gap-3">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/10 text-sm font-bold text-primary">
                   {t.name.charAt(0)}
                 </span>
                 <span className="min-w-0">
-                  <span className="block truncate text-sm font-bold">{t.name}</span>
-                  <span className="block truncate text-xs text-muted-foreground">{t.role}</span>
+                  <span className="block truncate text-sm font-bold">{t(t.name)}</span>
+                  <span className="block truncate text-xs text-muted-foreground">{t(t.role)}</span>
                 </span>
               </figcaption>
             </figure>
@@ -245,18 +245,18 @@ function Home() {
       {/* FAQ */}
       <section className="bg-card py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <Heading eyebrow="FAQ" title="Questions, answered" />
+          <Heading eyebrow={t("FAQ")} title={t("Questions, answered")} />
           <div className="mt-8 space-y-3">
             {faqs.map((f) => (
               <details
-                key={f.q}
+                key={t(f.q)}
                 className="group rounded-2xl border border-border bg-background p-5 [&_svg]:open:rotate-180"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold">
-                  {f.q}
+                  {t(f.q)}
                   <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform" />
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t(f.a)}</p>
               </details>
             ))}
           </div>
@@ -345,7 +345,7 @@ function AppPreview({ remaining }: { remaining: number }) {
             >
               <span className="text-xl">{m.items[0]?.emoji ?? "🍽️"}</span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold">{m.label}</span>
+                <span className="block truncate text-sm font-semibold">{t(m.label)}</span>
                 <span className="block truncate text-xs text-muted-foreground">
                   {m.items.map((i) => i.name).join(", ")}
                 </span>

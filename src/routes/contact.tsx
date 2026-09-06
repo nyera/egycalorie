@@ -132,12 +132,12 @@ function Contact() {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
             {channels.map((c) => (
-              <div key={c.title} className="rounded-3xl border border-border bg-card p-6">
+              <div key={t(c.title)} className="rounded-3xl border border-border bg-card p-6">
                 <span className="grid h-10 w-10 place-items-center rounded-2xl bg-primary/10 text-primary">
                   <c.icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-4 text-sm font-bold uppercase tracking-wide text-muted-foreground">
-                  {c.title}
+                  {t(c.title)}
                 </h3>
                 <p className="mt-1 font-semibold">{c.value}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{c.note}</p>

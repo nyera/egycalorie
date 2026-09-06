@@ -3,6 +3,7 @@ import { AlertTriangle, TrendingUp } from "lucide-react";
 import { Panel } from "@/components/app/cards";
 import { insights } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
+import { t } from "@/lib/i18n";
 
 export const Route = createFileRoute("/app/insights")({
   head: () => ({
@@ -19,10 +20,10 @@ export const Route = createFileRoute("/app/insights")({
 function InsightsPage() {
   return (
     <div className="mx-auto max-w-4xl">
-      <Panel title="Nutrition insights" description="Based on the last 7 days of logging">
+      <Panel title={t("Nutrition insights")} description={t("Based on the last 7 days of logging")}>
         <ul className="grid gap-3 sm:grid-cols-2">
           {insights.map((i) => (
-            <li key={i.title} className="rounded-2xl border border-border p-4">
+            <li key={t(i.title)} className="rounded-2xl border border-border p-4">
               <span
                 className={cn(
                   "grid h-10 w-10 place-items-center rounded-xl",
@@ -35,7 +36,7 @@ function InsightsPage() {
                   <AlertTriangle className="h-4.5 w-4.5" />
                 )}
               </span>
-              <h3 className="mt-3 font-display text-sm font-extrabold">{i.title}</h3>
+              <h3 className="mt-3 font-display text-sm font-extrabold">{t(i.title)}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{i.detail}</p>
             </li>
           ))}
