@@ -14,13 +14,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Free, Plus and Family Plans | Nutrigo" },
+      { title: "Pricing — Free, Plus and Family Plans | EgyCalorie" },
       {
         name: "description",
         content:
-          "Simple Nutrigo pricing in EGP. Track calories and macros free forever, or upgrade for meal plans, insights and family accounts.",
+          "Simple EgyCalorie pricing in EGP. Track calories and macros free forever, or upgrade for meal plans, insights and family accounts.",
       },
-      { property: "og:title", content: "Pricing — Free, Plus and Family Plans | Nutrigo" },
+      { property: "og:title", content: "Pricing — Free, Plus and Family Plans | EgyCalorie" },
       {
         property: "og:description",
         content: "Free forever calorie tracking, with Plus and Family upgrades priced in EGP.",

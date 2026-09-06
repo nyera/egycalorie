@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/app/insights")({
   head: () => ({
     meta: [
-      { title: "Insights — Nutrigo" },
+      { title: "Insights — EgyCalorie" },
       { name: "description", content: "What your eating habits look like this week." },
-      { property: "og:title", content: "Insights — Nutrigo" },
+      { property: "og:title", content: "Insights — EgyCalorie" },
       { property: "og:description", content: "What your eating habits look like this week." },
     ],
   }),

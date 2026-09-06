@@ -13,9 +13,9 @@ import {
 export const Route = createFileRoute("/app/")({
   head: () => ({
     meta: [
-      { title: "My Day — Nutrigo" },
+      { title: "My Day — EgyCalorie" },
       { name: "description", content: "Today's calories, macros and meals at a glance." },
-      { property: "og:title", content: "My Day — Nutrigo" },
+      { property: "og:title", content: "My Day — EgyCalorie" },
       { property: "og:description", content: "Today's calories, macros and meals at a glance." },
     ],
   }),

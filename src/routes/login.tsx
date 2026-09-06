@@ -9,12 +9,12 @@ import { AuthLayout } from "@/components/site/AuthLayout";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Log in to Nutrigo — Your Daily Food Diary" },
+      { title: "Log in to EgyCalorie — Your Daily Food Diary" },
       {
         name: "description",
-        content: "Sign in to Nutrigo to open your food diary, calorie budget, macros and weekly nutrition progress.",
+        content: "Sign in to EgyCalorie to open your food diary, calorie budget, macros and weekly nutrition progress.",
       },
-      { property: "og:title", content: "Log in to Nutrigo" },
+      { property: "og:title", content: "Log in to EgyCalorie" },
       { property: "og:description", content: "Sign in to continue tracking your meals and macros." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://egycalorie.lovable.app/login" },
@@ -36,7 +36,7 @@ function Login() {
       subtitle="Log in to pick up your diary exactly where you left it."
       footer={
         <>
-          New to Nutrigo?{" "}
+          New to EgyCalorie?{" "}
           <Link to="/signup" className="font-semibold text-primary hover:underline">
             Create a free account
           </Link>

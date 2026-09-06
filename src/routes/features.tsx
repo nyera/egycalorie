@@ -18,16 +18,16 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — Food, Calorie & Macro Tracking | Nutrigo" },
+      { title: "Features — Food, Calorie & Macro Tracking | EgyCalorie" },
       {
         name: "description",
         content:
-          "Food diary, calorie budgets, macro tracking, meal planning, recipes, weight and grocery lists — every Nutrigo feature, built for Egyptian meals.",
+          "Food diary, calorie budgets, macro tracking, meal planning, recipes, weight and grocery lists — every EgyCalorie feature, built for Egyptian meals.",
       },
-      { property: "og:title", content: "Features — Food, Calorie & Macro Tracking | Nutrigo" },
+      { property: "og:title", content: "Features — Food, Calorie & Macro Tracking | EgyCalorie" },
       {
         property: "og:description",
-        content: "Every Nutrigo capability, from the daily food diary to weekly nutrition insights.",
+        content: "Every EgyCalorie capability, from the daily food diary to weekly nutrition insights.",
       },
     ],
   }),
@@ -58,7 +58,7 @@ function Features() {
             Everything in one daily nutrition tool
           </h1>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Nutrigo covers the full loop: log what you eat, understand it, plan the next week and
+            EgyCalorie covers the full loop: log what you eat, understand it, plan the next week and
             watch the trend move.
           </p>
         </div>

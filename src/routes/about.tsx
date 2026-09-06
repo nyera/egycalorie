@@ -7,13 +7,13 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Nutrigo — Nutrition Tracking Built for Egypt" },
+      { title: "About EgyCalorie — Nutrition Tracking Built for Egypt" },
       {
         name: "description",
         content:
-          "Why we built Nutrigo: a calorie and macro tracker with a real Egyptian food database, made in Cairo for the way people here actually eat.",
+          "Why we built EgyCalorie: a calorie and macro tracker with a real Egyptian food database, made in Cairo for the way people here actually eat.",
       },
-      { property: "og:title", content: "About Nutrigo — Nutrition Tracking Built for Egypt" },
+      { property: "og:title", content: "About EgyCalorie — Nutrition Tracking Built for Egypt" },
       {
         property: "og:description",
         content: "A nutrition app made in Cairo, with ful, koshari and molokhia in the database from day one.",
@@ -111,7 +111,7 @@ function About() {
               <h2 className="text-3xl font-extrabold sm:text-4xl">Our story</h2>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
                 <p>
-                  Nutrigo started in 2024 as a spreadsheet shared between a nutritionist and a
+                  EgyCalorie started in 2024 as a spreadsheet shared between a nutritionist and a
                   developer in Maadi. It held portion weights for the dishes their clients ate every
                   week — a loaf of baladi bread, a bowl of ful, a plate of fatta from a family lunch.
                 </p>

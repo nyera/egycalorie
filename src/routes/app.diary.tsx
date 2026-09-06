@@ -17,9 +17,9 @@ import { egyptianFoods, mealCalories, todayMeals } from "@/lib/mock-data";
 export const Route = createFileRoute("/app/diary")({
   head: () => ({
     meta: [
-      { title: "Food Diary — Nutrigo" },
+      { title: "Food Diary — EgyCalorie" },
       { name: "description", content: "Everything you ate today, meal by meal." },
-      { property: "og:title", content: "Food Diary — Nutrigo" },
+      { property: "og:title", content: "Food Diary — EgyCalorie" },
       { property: "og:description", content: "Everything you ate today, meal by meal." },
     ],
   }),

@@ -11,7 +11,7 @@ export function SiteFooter() {
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
                 <Salad className="h-5 w-5" />
               </span>
-              <span className="font-display text-lg font-extrabold">Nutrigo</span>
+              <span className="font-display text-lg font-extrabold">EgyCalorie</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Calorie and macro tracking built for the way Egypt eats — ful, koshari,
@@ -44,7 +44,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Nutrigo. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} EgyCalorie. All rights reserved.</p>
           <p>Made in Cairo · Nutrition data is for guidance only.</p>
         </div>
       </div>

@@ -16,13 +16,13 @@ import { AuthLayout } from "@/components/site/AuthLayout";
 export const Route = createFileRoute("/signup")({
   head: () => ({
     meta: [
-      { title: "Create Your Free Nutrigo Account — Start Tracking Today" },
+      { title: "Create Your Free EgyCalorie Account — Start Tracking Today" },
       {
         name: "description",
         content:
-          "Sign up free for Nutrigo and start logging Egyptian meals, calories and macros in seconds. No card required.",
+          "Sign up free for EgyCalorie and start logging Egyptian meals, calories and macros in seconds. No card required.",
       },
-      { property: "og:title", content: "Create Your Free Nutrigo Account" },
+      { property: "og:title", content: "Create Your Free EgyCalorie Account" },
       {
         property: "og:description",
         content: "Free calorie and macro tracking built around Egyptian food. No card required.",

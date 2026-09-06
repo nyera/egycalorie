@@ -8,9 +8,9 @@ import { recipes } from "@/lib/mock-data";
 export const Route = createFileRoute("/app/recipes")({
   head: () => ({
     meta: [
-      { title: "Recipes — Nutrigo" },
+      { title: "Recipes — EgyCalorie" },
       { name: "description", content: "Lighter versions of Egyptian favourites." },
-      { property: "og:title", content: "Recipes — Nutrigo" },
+      { property: "og:title", content: "Recipes — EgyCalorie" },
       { property: "og:description", content: "Lighter versions of Egyptian favourites." },
     ],
   }),

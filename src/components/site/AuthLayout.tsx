@@ -26,7 +26,7 @@ export function AuthLayout({
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
             <Salad className="h-5 w-5" />
           </span>
-          <span className="font-display text-lg font-extrabold tracking-tight">Nutrigo</span>
+          <span className="font-display text-lg font-extrabold tracking-tight">EgyCalorie</span>
         </Link>
 
         <div className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center py-10">
@@ -62,7 +62,7 @@ export function AuthLayout({
               consistent for a full three months.”
             </p>
             <p className="mt-4 text-xs font-semibold text-muted-foreground">
-              Mariam T. — lost 9 kg with Nutrigo
+              Mariam T. — lost 9 kg with EgyCalorie
             </p>
           </div>
         </div>

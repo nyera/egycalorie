@@ -23,7 +23,7 @@ export function SiteHeader() {
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground">
               <Salad className="h-5 w-5" />
             </span>
-            <span className="font-display text-lg font-extrabold tracking-tight">Nutrigo</span>
+            <span className="font-display text-lg font-extrabold tracking-tight">EgyCalorie</span>
           </Link>
           <nav className="hidden items-center gap-1 md:flex">
             {nav.map((item) => (

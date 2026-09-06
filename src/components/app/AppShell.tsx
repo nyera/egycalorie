@@ -46,7 +46,7 @@ export function AppShell() {
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
             <Salad className="h-5 w-5" />
           </span>
-          <span className="font-display text-lg font-extrabold tracking-tight">Nutrigo</span>
+          <span className="font-display text-lg font-extrabold tracking-tight">EgyCalorie</span>
         </div>
         <nav className="flex-1 space-y-1 px-4 py-4">
           <p className="px-3 pb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
@@ -85,7 +85,7 @@ export function AppShell() {
           />
           <div className="absolute inset-y-0 left-0 flex w-[264px] flex-col bg-card">
             <div className="flex h-16 items-center justify-between px-5">
-              <span className="font-display text-lg font-extrabold">Nutrigo</span>
+              <span className="font-display text-lg font-extrabold">EgyCalorie</span>
               <button aria-label="Close menu" onClick={() => setOpen(false)}>
                 <X className="h-5 w-5" />
               </button>

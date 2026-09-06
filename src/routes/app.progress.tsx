@@ -16,9 +16,9 @@ import { weeklyCalories, weightTrend } from "@/lib/mock-data";
 export const Route = createFileRoute("/app/progress")({
   head: () => ({
     meta: [
-      { title: "Progress — Nutrigo" },
+      { title: "Progress — EgyCalorie" },
       { name: "description", content: "Weight trend and weekly calorie history." },
-      { property: "og:title", content: "Progress — Nutrigo" },
+      { property: "og:title", content: "Progress — EgyCalorie" },
       { property: "og:description", content: "Weight trend and weekly calorie history." },
     ],
   }),

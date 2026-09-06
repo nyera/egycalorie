@@ -19,13 +19,13 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Nutrigo — Support, Feedback & Partnerships" },
+      { title: "Contact EgyCalorie — Support, Feedback & Partnerships" },
       {
         name: "description",
         content:
-          "Get in touch with the Nutrigo team in Cairo for product support, food database corrections, feedback or partnership enquiries.",
+          "Get in touch with the EgyCalorie team in Cairo for product support, food database corrections, feedback or partnership enquiries.",
       },
-      { property: "og:title", content: "Contact Nutrigo — Support, Feedback & Partnerships" },
+      { property: "og:title", content: "Contact EgyCalorie — Support, Feedback & Partnerships" },
       {
         property: "og:description",
         content: "Questions about tracking, our food database or partnerships? Message the Cairo team.",

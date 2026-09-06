@@ -23,13 +23,13 @@ import { consumed, consumedMacros, dailyTargets, todayMeals } from "@/lib/mock-d
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nutrigo — Track Egyptian Food, Calories & Macros" },
+      { title: "EgyCalorie — Track Egyptian Food, Calories & Macros" },
       {
         name: "description",
         content:
-          "Nutrigo makes calorie and macro tracking effortless for Egyptian and Arab food. Log ful, koshari and molokhia in seconds, plan meals and see real progress.",
+          "EgyCalorie makes calorie and macro tracking effortless for Egyptian and Arab food. Log ful, koshari and molokhia in seconds, plan meals and see real progress.",
       },
-      { property: "og:title", content: "Nutrigo — Track Egyptian Food, Calories & Macros" },
+      { property: "og:title", content: "EgyCalorie — Track Egyptian Food, Calories & Macros" },
       {
         property: "og:description",
         content:
@@ -65,11 +65,11 @@ const features = [
 const testimonials = [
   { name: "Mariam H.", role: "Cairo · lost 9 kg", text: "Finally an app that knows what koshari is. I stopped guessing and started losing weight." },
   { name: "Omar S.", role: "Alexandria · gained muscle", text: "Macro tracking with Egyptian food used to be impossible. Now logging takes me 20 seconds." },
-  { name: "Dr. Nour A.", role: "Clinical dietitian", text: "I recommend Nutrigo to patients because the portions match how families actually eat here." },
+  { name: "Dr. Nour A.", role: "Clinical dietitian", text: "I recommend EgyCalorie to patients because the portions match how families actually eat here." },
 ];
 
 const faqs = [
-  { q: "Does Nutrigo really include Egyptian food?", a: "Yes. The product is designed around local dishes and home portions — ful, taameya, koshari, molokhia, mahshi, fatta, baladi bread and more." },
+  { q: "Does EgyCalorie really include Egyptian food?", a: "Yes. The product is designed around local dishes and home portions — ful, taameya, koshari, molokhia, mahshi, fatta, baladi bread and more." },
   { q: "Do I need to weigh my food?", a: "No. You can pick natural portions like 1 loaf, 1 bowl or 1 medium plate. Weighing is optional for people who want precision." },
   { q: "Can I use it in Arabic?", a: "Food names are shown in both English and Arabic so search always works the way you think." },
   { q: "Is there a free plan?", a: "Yes, the free plan covers daily logging, calories and basic macros forever." },
@@ -95,7 +95,7 @@ function Home() {
               <span className="text-primary">you actually eat</span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Nutrigo turns calorie and macro tracking into a 20-second habit. Log ful in the
+              EgyCalorie turns calorie and macro tracking into a 20-second habit. Log ful in the
               morning and koshari at lunch — and still know exactly where your day stands.
             </p>
 
@@ -129,7 +129,7 @@ function Home() {
 
       {/* BENEFITS */}
       <Section
-        eyebrow="Why Nutrigo"
+        eyebrow="Why EgyCalorie"
         title="Everything you need to eat better — nothing you don't"
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -198,7 +198,7 @@ function Home() {
               align="left"
             />
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Most trackers make you rebuild every Egyptian meal from scratch. Nutrigo starts with
+              Most trackers make you rebuild every Egyptian meal from scratch. EgyCalorie starts with
               the dishes on your table — with portions like "1 loaf of baladi bread" or "1 medium
               plate of koshari".
             </p>

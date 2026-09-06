@@ -6,9 +6,9 @@ import { mealPlan } from "@/lib/mock-data";
 export const Route = createFileRoute("/app/plan")({
   head: () => ({
     meta: [
-      { title: "Meal Plan — Nutrigo" },
+      { title: "Meal Plan — EgyCalorie" },
       { name: "description", content: "Your planned Egyptian meals for the week ahead." },
-      { property: "og:title", content: "Meal Plan — Nutrigo" },
+      { property: "og:title", content: "Meal Plan — EgyCalorie" },
       { property: "og:description", content: "Your planned Egyptian meals for the week ahead." },
     ],
   }),
