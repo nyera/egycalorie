@@ -213,8 +213,8 @@ function Home() {
                 className="rounded-2xl border border-border bg-card p-4 text-center shadow-sm"
               >
                 <div className="text-3xl">{emoji}</div>
-                <div className="mt-2 text-sm font-semibold leading-tight">{name}</div>
-                <div className="text-xs text-muted-foreground">{kcal}</div>
+                <div className="mt-2 text-sm font-semibold leading-tight">{t(name)}</div>
+                <div className="text-xs text-muted-foreground">{kcal.replace("kcal", t("kcal"))}</div>
               </div>
             ))}
           </div>
