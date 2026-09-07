@@ -134,18 +134,18 @@ function Pricing() {
                   <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">{t("Most popular")}</span>
                 )}
               </div>
-              <p className="mt-3 text-sm text-muted-foreground">{plan.blurb}</p>
+              <p className="mt-3 text-sm text-muted-foreground">{t(plan.blurb)}</p>
               <div className="mt-6 flex items-end gap-1.5">
                 <span className="font-display text-4xl font-extrabold">{plan.price}</span>
                 <span className="pb-1.5 text-sm font-semibold text-muted-foreground">
-                  EGP / {plan.period}
+                  {t("EGP")} / {t(plan.period)}
                 </span>
               </div>
               <ul className="mt-6 flex-1 space-y-3">
                 {plan.features.map((f) => (
                   <li key={f} className="flex gap-3 text-sm">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    <span className="text-muted-foreground">{f}</span>
+                    <span className="text-muted-foreground">{t(f)}</span>
                   </li>
                 ))}
               </ul>
@@ -155,7 +155,7 @@ function Pricing() {
                 variant={plan.featured ? "default" : "outline"}
                 className="mt-7 w-full rounded-full"
               >
-                <Link to="/signup">{plan.cta}</Link>
+                <Link to="/signup">{t(plan.cta)}</Link>
               </Button>
             </div>
           ))}

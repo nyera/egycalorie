@@ -37,7 +37,7 @@ function Login() {
       subtitle={t("Log in to pick up your diary exactly where you left it.")}
       footer={
         <>
-          New to EgyCalorie?{" "}
+          {t("New to EgyCalorie?")}{" "}
           <Link to="/signup" className="font-semibold text-primary hover:underline">{t("Create a free account")}</Link>
         </>
       }
@@ -76,7 +76,7 @@ function Login() {
         <label className="flex items-center gap-2.5 text-sm text-muted-foreground">
           <Checkbox id="remember" defaultChecked />{t("Keep me signed in")}</label>
         <Button type="submit" size="lg" disabled={loading} className="w-full rounded-full">
-          {loading ? "Signing in…" : "Log in"}
+          {loading ? t("Signing in…") : t("Log in")}
         </Button>
       </form>
 

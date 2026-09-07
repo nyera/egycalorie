@@ -125,7 +125,7 @@ function Contact() {
               disabled={sending}
               className="mt-6 w-full rounded-full sm:w-auto sm:px-8"
             >
-              {sending ? "Sending…" : "Send message"}
+              {sending ? t("Sending…") : t("Send message")}
             </Button>
             <p className="mt-3 text-xs text-muted-foreground">{t("This demo form doesn't store data yet.")}</p>
           </form>
@@ -139,8 +139,8 @@ function Contact() {
                 <h3 className="mt-4 text-sm font-bold uppercase tracking-wide text-muted-foreground">
                   {t(c.title)}
                 </h3>
-                <p className="mt-1 font-semibold">{c.value}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{c.note}</p>
+                <p className="mt-1 font-semibold">{t(c.value)}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{t(c.note)}</p>
               </div>
             ))}
           </div>
