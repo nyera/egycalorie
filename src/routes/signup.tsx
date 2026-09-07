@@ -47,7 +47,7 @@ function Signup() {
       subtitle={t("Two minutes to set up, then log your first meal today. No card required.")}
       footer={
         <>
-          Already have an account?{" "}
+          {t("Already have an account?")}{" "}
           <Link to="/login" className="font-semibold text-primary hover:underline">{t("Log in")}</Link>
         </>
       }
@@ -118,7 +118,7 @@ function Signup() {
           <span>{t("I agree to the terms of service and privacy policy.")}</span>
         </label>
         <Button type="submit" size="lg" disabled={loading} className="w-full rounded-full">
-          {loading ? "Creating account…" : "Create free account"}
+          {loading ? t("Creating account…") : t("Create free account")}
         </Button>
       </form>
 

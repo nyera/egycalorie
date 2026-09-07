@@ -125,10 +125,10 @@ function About() {
                   "Every food entry is reviewed against a real portion, weighed in a home kitchen.",
                   "Nutrition guidance is checked by a registered dietitian before it ships.",
                   "We never sell personal data. Your diary belongs to you.",
-                ].map((t) => (
-                  <li key={t} className="flex gap-3">
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    <span className="text-muted-foreground">{t}</span>
+                    <span className="text-muted-foreground">{t(item)}</span>
                   </li>
                 ))}
               </ul>
