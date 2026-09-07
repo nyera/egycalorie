@@ -193,7 +193,7 @@ function Home() {
               {["Ful & taameya", "Koshari & pasta", "Molokhia & mahshi", "Fatta & grilled meat", "Baladi bread & rice", "Egyptian desserts"].map(
                 (i) => (
                   <li key={i} className="flex items-center gap-2 text-sm font-medium">
-                    <Check className="h-4 w-4 shrink-0 text-primary" /> {i}
+                    <Check className="h-4 w-4 shrink-0 text-primary" /> {t(i)}
                   </li>
                 ),
               )}
@@ -300,14 +300,14 @@ function AppPreview({ remaining }: { remaining: number }) {
             <p className="truncate font-display text-lg font-bold">{t("My Day")}</p>
           </div>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            {pct}% of budget
+            {pct}% {t("of budget")}
           </span>
         </div>
 
         <div className="mt-5 rounded-2xl bg-muted/60 p-5 text-center">
           <p className="text-xs font-medium text-muted-foreground">{t("Remaining")}</p>
           <p className="font-display text-4xl font-extrabold">{remaining}</p>
-          <p className="text-xs text-muted-foreground">of {dailyTargets.calories} kcal</p>
+          <p className="text-xs text-muted-foreground">{t("of")} {dailyTargets.calories} {t("kcal")}</p>
           <div className="mt-4 h-2.5 overflow-hidden rounded-full bg-border">
             <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }} />
           </div>
@@ -320,7 +320,7 @@ function AppPreview({ remaining }: { remaining: number }) {
             ["Fat", consumedMacros.fat, dailyTargets.fat, "bg-fat"],
           ].map(([label, val, target, color]) => (
             <div key={label as string} className="rounded-2xl border border-border p-3">
-              <p className="text-[11px] text-muted-foreground">{label as string}</p>
+              <p className="text-[11px] text-muted-foreground">{t(label as string)}</p>
               <p className="text-sm font-bold">
                 {val as number}
                 <span className="text-[11px] font-normal text-muted-foreground">
@@ -349,7 +349,7 @@ function AppPreview({ remaining }: { remaining: number }) {
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-sm font-semibold">{t(m.label)}</span>
                 <span className="block truncate text-xs text-muted-foreground">
-                  {m.items.map((i) => i.name).join(", ")}
+                  {m.items.map((i) => t(i.name)).join("\u060C ")}
                 </span>
               </span>
               <span className="shrink-0 text-sm font-bold">
